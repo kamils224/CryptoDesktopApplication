@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="PZ_generatory.FipsTestsUserControl"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PZ_generatory"
+             mc:Ignorable="d" 
+             Height="Auto" Width="Auto" Background="White">
+
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+
+    <Grid Height="585" Width="999" x:Name="TestyFips">
+        <Label FontSize="30" Margin="27,183,580,343">
+            Wybór formatu wejściowego
+        </Label>
+
+        <Label FontWeight="Bold" HorizontalAlignment="Center" FontSize="50" Margin="92,29,662,477" Content="Testy FIPS"/>
+        <Button Name="LoadFileButton" FontSize="26" Margin="27,340,580,168" Height="70" Click="LoadFileButton_Click">
+            Wczytaj ciąg
+        </Button>
+        
+        <Button Name="Info" FontSize="26" Margin="27,370,580,0" Height="70" Click="InfoButton_Click">
+            Info
+        </Button>
+
+        <ComboBox Name="FormatTypeComboBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectedIndex="0" FontSize="30" HorizontalAlignment="Center" Margin="27,242,580,279" Width="392">
+            <ComboBoxItem  Name="TxtFormat">
+                Plik tekstowy
+            </ComboBoxItem>
+            <ComboBoxItem Name="BinFormat">
+                Plik binarny
+            </ComboBoxItem>
+
+        </ComboBox>
+       
+        
+        
+        <StackPanel Margin="451,0,0,0" Orientation="Vertical">
+            <StackPanel Background="DarkGray" Orientation="Vertical" Height="131">
+                <TextBlock FontWeight="Bold" TextWrapping="Wrap" FontSize="30" Height="45" Margin="10,0,0,0">
+                Test pojedynczych bitów
+                </TextBlock>
+                <TextBlock Text="Liczba jedynek: " Name="SingletestInfo" TextWrapping="Wrap" FontSize="28" Height="41" Margin="10,0,0,0">
+                
+                </TextBlock>
+                <TextBlock Text="Wynik: " Name="SingleTestResult" TextWrapping="Wrap" FontSize="28" Height="41" Margin="10,0,0,0">
+                
+                </TextBlock>
+            </StackPanel>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                <StackPanel Background="Gray" Orientation="Vertical" Height="160">
+                    <TextBlock FontWeight="Bold" TextWrapping="Wrap" FontSize="30" Text="Test serii" Margin="10,0,0,0"/>
+                    <TextBlock x:Name="SeriesOnesText" TextWrapping="Wrap" FontSize="28" Margin="10,0,180,0"><Run Text="Seria jedynek: "/><Run Text=" "/></TextBlock>
+                    <TextBlock Name="SeriesZerosText" TextWrapping="Wrap" FontSize="28" Text="Seria zer: " Margin="10,0,180,0"/>
+                    <TextBlock  Name="SeriesResultText" TextWrapping="Wrap" FontSize="28" Text="Wynik: " Margin="10,0,0,0"/>
+                </StackPanel>
+            </ScrollViewer>
+            
+            <StackPanel Background="DarkGray" Orientation="Vertical" Height="117">
+                <TextBlock FontWeight="Bold" TextWrapping="Wrap" FontSize="30" Text="Test długiej serii" Margin="10,0,0,0"/>
+                <TextBlock Name="LongSeriesInfoText" TextWrapping="Wrap" FontSize="28" Margin="10,0,0,0" Text="Najdłuższa seria: "></TextBlock>
+                <TextBlock Name="LongSeriesResultText" TextWrapping="Wrap" FontSize="28" Margin="10,0,0,0" Text="Wynik: "></TextBlock>
+            </StackPanel>
+            <StackPanel Background="Gray" Orientation="Vertical" Height="170" Width="554" Margin="0,0,-6,0">
+                <TextBlock FontWeight="Bold" TextWrapping="Wrap" FontSize="30" Text="Test pokerowy" Margin="10,0,0,0"/>
+                <TextBlock Name="PokerTestXText" TextWrapping="Wrap" FontSize="28" Text="Wartość X: " Margin="10,0,0,0"/>
+                <TextBlock Name="PokerTestResultText" TextWrapping="Wrap" FontSize="28" Text="Wynik: " Margin="10,0,0,0"/>
+
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
+

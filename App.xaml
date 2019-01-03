@@ -1,0 +1,32 @@
+﻿<Application x:Class="CryptoDesktopApplication.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CryptoDesktopApplication"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                <!--<ResourceDictionary Source="Themes/IgTheme/IG.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/IgTheme/IG.MSControls.Toolkit.Implicit.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style TargetType="TextBox">
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="BorderBrush" Value="#FF224BB6" />
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Foreground" Value="#FF224BB6" />
+            </Style>
+
+            <Style TargetType="ComboBox">
+                <Setter Property="Foreground" Value="#FF224BB6"/>
+            </Style>
+
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

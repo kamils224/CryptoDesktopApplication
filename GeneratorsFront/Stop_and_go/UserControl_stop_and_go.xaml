@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="PZ_generatory.UserControl_stop_and_go"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:PZ_generatory"
+                  mc:Ignorable="d" 
+             Height="Auto" Width="Auto" Background="White">
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+    <Grid x:Name="GridStop_and_go">
+        <StackPanel HorizontalAlignment="Center" x:Name="StackGrid">
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
+                GENERATOR STOP AND GO
+            </Label>
+            <Label Margin="60,10,60,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Zaproponowany w 1987 r. przez C.G. Gunthera generator został zbudowany z
+trzech rejestrów LFSR o różnej długości. LFSR-1 taktuje rejestr LFSR-2 jedynką,
+a rejestr LFSR-3 zerem. Ciąg wyjściowy jest sumą modulo 2 ciagów wyjściowych LFSR-2 i LFSR-3."/>
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/gen_stop_and_go.PNG" Height="176" Width="421" />
+            <Label Margin="60,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Jeżeli długości wszystkich trzech rejestrów są względnie pierwsze, a zarówno
+okresy generatorów LFSR-2 i LFSR-3 (gcd(T2; T3) = 1), to okres generatora jest równy iloczynowi okresów wszystkich rejestrów" />
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/wz_stop_and_go.PNG" Height="30" Width="238" />
+            <Grid Margin="0,20">
+                <StackPanel HorizontalAlignment="Left" Margin="50,0">
+                    <Button x:Name="buttonBackToCAtegoryChoice" Height="50"  Click="BackTo_Click" HorizontalContentAlignment="Center">
+                        <DynamicResource ResourceKey="ArrowLeft"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="50,0">
+                    <Button Height="50" Width="500" HorizontalContentAlignment="Center" VerticalAlignment="Center"  Click="Wykorzystaj_Click">
+                        <TextBlock TextAlignment="Center" FontSize="25" Text="Wykorzystaj generator" TextWrapping="Wrap" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

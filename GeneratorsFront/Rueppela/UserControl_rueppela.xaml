@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="PZ_generatory.UserControl_rueppela"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PZ_generatory"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+          mc:Ignorable="d" 
+             Height="Auto" Width="Auto" Background="White">
+
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+    <Grid x:Name="GridRueppela">
+        <StackPanel HorizontalAlignment="Center" x:Name="StackGrid">
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
+                GENERATOR SAMODECYMUJĄCY RUEPPELA
+            </Label>
+            <Label Margin="60,10,60,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Zaproponowany został w 1987r. przez R. A. Rueppela i steruje własnym wejściem
+zegarowym. Kiedy wyjście rejestru LFSR jest równe 0, wtedy ten LFSR jest taktowany d razy, a gdy jest równe 1 to k razy."/>
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/gen_rueppela.PNG" Height="147" Width="575" />
+            <Label Margin="60,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="Gdy okres rejestru LFSR jest maksymalny i równy T0, gdzie | | oznacza
+całkowite dolne ograniczenie, to okres takiego generatora wynosi:" />
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/wz_rueppela.PNG" Height="51" Width="212" />
+            <Grid Margin="0,20">
+                <StackPanel HorizontalAlignment="Left" Margin="50,0">
+                    <Button x:Name="buttonBackToCAtegoryChoice" Height="50"  Click="BackTo_Click" HorizontalContentAlignment="Center">
+                        <DynamicResource ResourceKey="ArrowLeft"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="50,0">
+                    <Button Height="50" Width="500" HorizontalContentAlignment="Center" VerticalAlignment="Center" Click="Wykorzystaj_Click">
+                        <TextBlock TextAlignment="Center" FontSize="25" Text="Wykorzystaj generator" TextWrapping="Wrap" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

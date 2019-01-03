@@ -1,0 +1,68 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptoDesktopApplication.GeneratorsFront.Geffego"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="CryptoDesktopApplication.GeneratorsFront.Geffego.GeffeSettings"
+             mc:Ignorable="d" 
+              Height="645" Width="1280" Background="White">
+    <Grid x:Name="Settings">
+        <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Generator Geffego - ustawienia" Margin="0,10,0,581"  />
+        <Label FontSize="20" Content="Ustaw wartości początkowe rejestrów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top" Width="auto"/>
+        <StackPanel Orientation="Horizontal" Margin="68,137,468,475" RenderTransformOrigin="0.5,0.5">
+            <TextBox MaxLength="64"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
+                <materialDesign:PackIcon ToolTip="Usuwa tekst" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+            </Button>
+        </StackPanel>
+        <Label FontSize="20" Content="Rejestr 1" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,100,0,0" VerticalAlignment="Top" Width="auto"/>
+        <StackPanel Orientation="Horizontal" Margin="68,238,468,374" RenderTransformOrigin="0.5,0.5">
+            <TextBox MaxLength="64" x:Name="lfsr2" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
+                <materialDesign:PackIcon ToolTip="Usuwa tekst" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+            </Button>
+        </StackPanel>
+        <Label FontSize="20" Content="Rejestr 2" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,201,0,0" VerticalAlignment="Top" Width="auto"/>
+        <StackPanel Orientation="Horizontal" Margin="68,343,468,267" RenderTransformOrigin="0.5,0.5">
+            <TextBox MaxLength="64" x:Name="lfsr3" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
+                <materialDesign:PackIcon ToolTip="Usuwa tekst" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+            </Button>
+        </StackPanel>
+        <Label FontSize="20" Content="Rejestr 3" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,306,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,453,0,0" VerticalAlignment="Top" Width="auto"/>
+        <StackPanel Orientation="Horizontal" Margin="302,456,709,155" RenderTransformOrigin="0.5,0.5">
+            <TextBox  x:Name="lfsr4" ToolTip="Liczba z zakresu od 0 do 4 294 967 295 (uint)." FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="152" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
+                <materialDesign:PackIcon Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+            </Button>
+        </StackPanel>
+        <Label ToolTip="Liczba bitów" x:Name="r1Counter" FontSize="20" Content="0" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,137,0,0" VerticalAlignment="Top" Width="38" Height="33"/>
+        <Label ToolTip="Liczba bitów" x:Name="r2Counter" FontSize="20" Content="0" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,238,0,0" VerticalAlignment="Top" Width="38" Height="33"/>
+        <Label ToolTip="Liczba bitów" x:Name="r3Counter" FontSize="20" Content="0" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,343,0,0" VerticalAlignment="Top" Width="38" Height="33"/>
+        <Label Content="Format generowanego ciągu: " FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,416,0,0" VerticalAlignment="Top" Width="auto"/>
+        <ComboBox FontSize="20" x:Name="outputFormatComboBox" Margin="302,418,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="153" Height="37">
+            <ComboBoxItem x:Name="char_type" Content="Znaki (char)" IsSelected="True"/>
+            <ComboBoxItem x:Name="byte_type" Content="Szesnastkowo (byte)"/>
+            <ComboBoxItem x:Name="int_type" Content="Liczby (int)"/>
+        </ComboBox>
+        <Label ToolTip="Aktualny stan rejestru" Content="0101011001010110010101100101011001010110010101100101011001010110" x:Name="r1State" FontSize="20"  Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,168,0,0" VerticalAlignment="Top" Width="710" Height="33"/>
+        <Label ToolTip="Aktualny stan rejestru" Content="0101011001010110010101100101011001010110010101100101011001010110" x:Name="r2State" FontSize="20"  Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,270,0,0" VerticalAlignment="Top" Width="710" Height="33"/>
+        <Label ToolTip="Aktualny stan rejestru" Content="0101011001010110010101100101011001010110010101100101011001010110" x:Name="r3State" FontSize="20"  Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,378,0,0" VerticalAlignment="Top" Width="710" Height="33"/>
+        <TextBox FontSize="20" x:Name="output" HorizontalAlignment="Left" MinHeight="110" Height="140" MaxHeight="200" Margin="18,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1080"/>
+        <Button FontSize="20" x:Name="resultTxt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="1103,495,0,0" VerticalAlignment="Top" Width="157" Height="54"/>
+        <Button FontSize="20" x:Name="resultBin" Content="Zapisz (.bin)" HorizontalAlignment="Left" Margin="1103,554,0,0" VerticalAlignment="Top" Width="157" Height="54" />
+        <Button Height="67" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="489,418,492,160">
+            <TextBlock TextAlignment="Center" FontSize="30" Text="Generuj ciąg" TextWrapping="Wrap" />
+        </Button>
+        <materialDesign:PackIcon x:Name="singleBit" ToolTip="Test pojedynczych bitów" Margin="929,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
+        <materialDesign:PackIcon x:Name="seriesTest" ToolTip="Test serii" Margin="811,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
+        <materialDesign:PackIcon x:Name="longSeriesTest" ToolTip="Test długiej serii" Margin="870,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.722,0.54" />
+        <materialDesign:PackIcon x:Name="Poker" ToolTip="Test pokerowy" Margin="988,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
+        <Label Content="Wyniki testów FIPS-140-2: " FontSize="20" ToolTip="Badane są tylko ciągi znakowe. Ciągi krótsze niż 20 000 dają wynik negatywny." Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="811,383,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,137,0,0" VerticalAlignment="Top" Width="157" Height="33" ></Button>
+        <Button FontSize="20" x:Name="setRegister2" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,238,0,0" VerticalAlignment="Top" Width="157" Height="33" />
+        <Button FontSize="20" x:Name="setRegister3" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,343,0,0" VerticalAlignment="Top" Width="157" Height="35" />
+    </Grid>
+</UserControl>

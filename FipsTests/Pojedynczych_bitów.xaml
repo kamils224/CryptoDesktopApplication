@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="PZ_generatory.Pojedynczych_bitów"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PZ_generatory"
+             mc:Ignorable="d" 
+             d:DesignHeight="Auto" d:DesignWidth="Auto">
+    <Grid>
+        <StackPanel>
+            <TextBlock FontSize="18" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="12,21,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" Width="486"><Run Text="Liczba n jedynek w badanym ciągu powinna spełniać warunek:"/><LineBreak/><Run Text=""/></TextBlock>
+            <Label  Content="9725 &lt; n &lt; 10 275" HorizontalAlignment="Left" Margin="218,51,0,0" VerticalAlignment="Top" FontSize="30" Foreground="#FF224BB6"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="PZ_generatory.Serii"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PZ_generatory"
+             mc:Ignorable="d" 
+             d:DesignHeight="Auto" d:DesignWidth="Auto">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock FontSize="18" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="11,17,0,6" TextWrapping="Wrap" VerticalAlignment="Top" Height="173" Width="477">Seria - maksymalny podciąg następujących po sobie zer albo jedynek. Dla próbki należy wyznaczyć liczbę wystąpień serii o długości n&gt;1 dla zer i dla jedynek osobno. Test zakończy się sukcesem, jeśli liczba seri o długości 1 do 6 (serie o długości większej niż 6 są traktowane jako serie o długości 6) mieści się w przedziałach wyspecyfikowanych w tabeli obok. </TextBlock>
+            <Image HorizontalAlignment="Left" Height="146" Margin="18,17,8,5" VerticalAlignment="Top" Width="216" Source="/Images/tabela.PNG"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

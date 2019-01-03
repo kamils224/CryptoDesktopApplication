@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="PZ_generatory.UserControl_gollmana"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:PZ_generatory"
+               mc:Ignorable="d" 
+             Height="Auto" Width="Auto" Background="White">
+
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+    
+    <Grid x:Name="GridGollmana">
+        <StackPanel HorizontalAlignment="Center" x:Name="StackGrid">
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
+                GENERATOR KASKADA GOLLMANA
+            </Label>
+            <Label Margin="55,8,55,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Generator ten został zaproponowany przez D. Gollmana. Składa się on z
+ciagu rejestrów LFSR, gdzie wyjście zegarowe każdego następnego rejestru w ciągu
+jest sterowane przez poprzedni LFSR."/>
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/gen_gollmana.PNG" Height="148" Width="530" />
+            <Label Margin="55,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="Ciągiem wyjściowym tego generatora jest ciag wyjściowy ostatniego rejestru
+LFSR. Złożoność liniowa generatora składajacego sie z n rejestrów, gdy wszystkie rejestry maja taka sama długosc L (jest to wielka liczba) jest równa:" />
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/wz_gollmana.PNG" Height="30" Width="174" />
+            <Label Margin="60,-5" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="Jego okres jest n-tą potegą okresu pojedynczego rejestru" />
+            </Label>
+            <Image Margin="0,4" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/wz_gollmana2.PNG" Height="28" Width="182" />
+            <Grid Margin="0,10">
+                <StackPanel HorizontalAlignment="Left" Margin="50,0">
+                    <Button x:Name="buttonBackToCAtegoryChoice" Height="50"  Click="BackTo_Click" HorizontalContentAlignment="Center">
+                        <DynamicResource ResourceKey="ArrowLeft"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="50,0">
+                    <Button Height="50" Width="500" HorizontalContentAlignment="Center" VerticalAlignment="Center"  Click="Wykorzystaj_Click">
+                        <TextBlock TextAlignment="Center" FontSize="25" Text="Wykorzystaj generator" TextWrapping="Wrap" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>

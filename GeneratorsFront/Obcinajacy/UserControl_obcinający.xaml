@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="PZ_generatory.UserControl_obcinający"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:PZ_generatory"
+    mc:Ignorable="d" 
+             Height="Auto" Width="Auto" Background="White">
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+    <Grid x:Name="GridObcinajacy">
+        <StackPanel HorizontalAlignment="Center" x:Name="StackGrid">
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
+                GENERATOR OBCINAJĄCY
+            </Label>
+            <Label Margin="60,10,60,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Generator zaproponowany w 1993 roku przez D.Coppersmitha, H.Krawczyka i Y.Mansoura.  Wykorzystuje dwa rejestry LFSR. Bity wyjściowe jednego z rejestrów decyduję, które bity wyjściowe drugiego rejestru będą wykorzystane, a które odrzucone. Jeśli na wyjściu rejestru S pojawi się '1', bit wyjściowy rejestru A jest dołączany do ciągu klucza ki. Obydwa rejestry pracują równocześnie."/>
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/gen_obcinajacy.PNG" Height="129" Width="535" />
+            <Label Margin="60,0" FontSize="18" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="Jeżeli długości rejestrów sa względnie pierwsze, to okres takiego generatora wynosi:" />
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/wz_obcinajacy.PNG" Height="57" Width="230" />
+            <Grid Margin="0,20">
+                <StackPanel HorizontalAlignment="Left" Margin="50,0">
+                    <Button x:Name="buttonBackToCAtegoryChoice" Height="50"  Click="BackTo_Click" HorizontalContentAlignment="Center">
+                        <DynamicResource ResourceKey="ArrowLeft"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="50,0">
+                    <Button Height="50" Width="500" HorizontalContentAlignment="Center" VerticalAlignment="Center"  Click="Wykorzystaj_Click">
+                        <TextBlock TextAlignment="Center" FontSize="25" Text="Wykorzystaj generator" TextWrapping="Wrap" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            
+        </StackPanel>
+    </Grid>
+</UserControl>
