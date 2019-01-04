@@ -32,7 +32,7 @@
             </Button>
         </StackPanel>
         <Label FontSize="20" Content="Rejestr 3" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,306,0,0" VerticalAlignment="Top" Width="auto"/>
-        <Label FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,453,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label x:Name="seriesLengthLabel" FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,453,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="302,456,801,155" RenderTransformOrigin="0.5,0.5">
             <TextBox DataObject.Pasting="TextBoxPasting" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 4 294 967 295 (uint)." FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             <Button Width="20" Height="20" Click="Clear_outputLength"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
@@ -76,7 +76,7 @@
             </Label.Style>
         </Label>
         <Label Content="Format generowanego ciągu" FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,416,0,0" VerticalAlignment="Top" Width="auto"/>
-        <ComboBox FontSize="20" x:Name="outputFormatComboBox" Margin="302,418,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="37">
+        <ComboBox FontSize="20" x:Name="outputFormatComboBox" Margin="302,418,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="37" SelectionChanged="outputFormatComboBox_SelectionChanged">
             <ComboBoxItem ToolTip="Tekst składający się z zer i jedynek"  x:Name="char_type" Content="Znaki (char)" IsSelected="True"/>
             <ComboBoxItem ToolTip="Rodzaj kodowania transportowego, kodowanie bajtów za pomocą ciągu znaków" x:Name="base64_type" Content="Base64"/>
         </ComboBox>
@@ -117,8 +117,8 @@
             </Label.Style>
         </Label>
         <TextBox IsReadOnly="True" FontSize="20" x:Name="output" HorizontalAlignment="Left" MinHeight="110" Height="140" MaxHeight="200" Margin="18,495,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="1080"/>
-        <Button FontSize="20" x:Name="resultTxt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="1103,495,0,0" VerticalAlignment="Top" Width="157" Height="54"/>
-        <Button FontSize="20" x:Name="resultBin" Content="Zapisz (.bin)" HorizontalAlignment="Left" Margin="1103,554,0,0" VerticalAlignment="Top" Width="157" Height="54" />
+        <Button FontSize="20" x:Name="saveFileTxt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="1103,495,0,0" VerticalAlignment="Top" Width="157" Height="54" Click="saveFileTxt_Click"/>
+        <Button FontSize="20" x:Name="saveFileBin" Content="Zapisz (.bin)" HorizontalAlignment="Left" Margin="1103,554,0,0" VerticalAlignment="Top" Width="157" Height="54" Click="saveFileBin_Click" />
         <Button x:Name="GenerateBtn" Height="69" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="484,416,505,160" Click="GenerateBtn_Click" >
             <TextBlock TextAlignment="Center" FontSize="30" Text="Generuj ciąg" TextWrapping="Wrap" />
         </Button>
@@ -142,14 +142,25 @@
         <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,137,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="setRegister1_Click" ></Button>
         <Button FontSize="20" x:Name="setRegister2" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,238,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="setRegister2_Click" />
         <Button FontSize="20" x:Name="setRegister3" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,343,0,0" VerticalAlignment="Top" Width="157" Height="35" Click="setRegister3_Click" />
-        <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="239" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
+        <DataGrid DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="239" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Width="100" Header="Długość" Binding="{Binding Length}" />
                 <DataGridTextColumn Width="*" Header="Wielomian" Binding="{Binding Polynomial}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Label FontSize="20" Content="Tabela wielomianów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="1018,95,0,0" VerticalAlignment="Top" Width="auto"/>
-        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,383,0,0" VerticalAlignment="Top" Width="178" Height="35" />
+        <Label ToolTip="Aby zmienić wielomian, wpisz liczby oddzielone przecinkami. Przykład: 1,3,5 oznacza bity na pozycji pierwszej, trzeciej i piątej licząc od lewej" FontSize="20" Content="Tabela wielomianów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="1018,95,0,0" VerticalAlignment="Top" Width="auto">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightGray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,383,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="setPolynomial_Click" />
         <Label ToolTip="Aktulna liczba bitów w rejestrze" x:Name="r1CurrentCounter" FontSize="20" Content="8" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" Width="38" Height="33">
             <Label.Style>
                 <Style TargetType="Label">
