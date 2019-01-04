@@ -1,12 +1,6 @@
 ﻿
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\App.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\FipsTests\Długiej_serii.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\FipsTests\FipsTestsUserControl.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\FipsTests\Pojedynczych_bitów.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\FipsTests\Pokerowy.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\FipsTests\Serii.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\FipsTests\TestsInfo.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Geffego\Settings_geffego.xaml;;
+FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Geffego\GeffeSettings.xaml;;
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Gollmana\Settings_gollmana.xaml;;
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Gollmana\UserControl_gollmana.xaml;;
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Obcinajacy\Settings_obcinajacy.xaml;;
@@ -19,8 +13,6 @@ FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplicatio
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Samoobcinajacy\UserControl_samoobcinający.xaml;;
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Stop_and_go\Settings_stop_and_go.xaml;;
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Stop_and_go\UserControl_stop_and_go.xaml;;
+FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\LoadingControl\LoadingAnimation.xaml;;
 FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\MainWindow.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Geffego\UserControl_geffego.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Geffego\UserControlGeffe.xaml;;
-FC:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\GeneratorsFront\Geffego\GeffeSettings.xaml;;
 

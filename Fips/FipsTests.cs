@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace PZ_generatory
+namespace CryptoDesktopApplication.Fips
 {
     public class SingleBitTestResult
     {

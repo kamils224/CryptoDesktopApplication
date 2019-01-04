@@ -1,4 +1,5 @@
 ﻿using CryptoDesktopApplication.Backend;
+using CryptoDesktopApplication.Fips;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Win32;
 using System;

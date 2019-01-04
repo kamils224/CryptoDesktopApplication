@@ -40,9 +40,9 @@ namespace CryptoDesktopApplication.Backend
         }
         protected virtual void NextStep()
         {
-            foreach (var r in Registers)
+            for (int i = 0; i < Registers.Length; i++)
             {
-                r.NextStep();
+                Registers[i].NextStep();
             }
         }
 

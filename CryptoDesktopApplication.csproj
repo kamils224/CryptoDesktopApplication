@@ -61,45 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="FipsTests\Długiej_serii.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FipsTests\FipsTestsUserControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FipsTests\Pojedynczych_bitów.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FipsTests\Pokerowy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FipsTests\Serii.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="FipsTests\TestsInfo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="GeneratorsFront\Geffego\GeffeSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GeneratorsFront\Geffego\Settings_geffego.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Geffego\UserControlGeffe.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GeneratorsFront\Geffego\UserControl_geffego.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="GeneratorsFront\Gollmana\Settings_gollmana.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -149,6 +113,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="LoadingControl\Block.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoadingControl\LoadingAnimation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -168,36 +140,9 @@
     <Compile Include="Backend\ShrinkingGenerator.cs" />
     <Compile Include="Backend\StopAndGoGenerator.cs" />
     <Compile Include="Backend\ThresholdGenerator.cs" />
-    <Compile Include="FipsTests\Długiej_serii.xaml.cs">
-      <DependentUpon>Długiej_serii.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FipsTests\FipsTests.cs" />
-    <Compile Include="FipsTests\FipsTestsUserControl.xaml.cs">
-      <DependentUpon>FipsTestsUserControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FipsTests\Pojedynczych_bitów.xaml.cs">
-      <DependentUpon>Pojedynczych_bitów.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FipsTests\Pokerowy.xaml.cs">
-      <DependentUpon>Pokerowy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FipsTests\Serii.xaml.cs">
-      <DependentUpon>Serii.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FipsTests\TestsInfo.xaml.cs">
-      <DependentUpon>TestsInfo.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Fips\FipsTests.cs" />
     <Compile Include="GeneratorsFront\Geffego\GeffeSettings.xaml.cs">
       <DependentUpon>GeffeSettings.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Geffego\Settings_geffego.xaml.cs">
-      <DependentUpon>Settings_geffego.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Geffego\UserControlGeffe.xaml.cs">
-      <DependentUpon>UserControlGeffe.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Geffego\UserControl_geffego.xaml.cs">
-      <DependentUpon>UserControl_geffego.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\Gollmana\Settings_gollmana.xaml.cs">
       <DependentUpon>Settings_gollmana.xaml</DependentUpon>
@@ -211,6 +156,7 @@
     <Compile Include="GeneratorsFront\Obcinajacy\UserControl_obcinający.xaml.cs">
       <DependentUpon>UserControl_obcinający.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorsFront\PolynomialModel.cs" />
     <Compile Include="GeneratorsFront\Progowy\Settings_progowy.xaml.cs">
       <DependentUpon>Settings_progowy.xaml</DependentUpon>
     </Compile>
@@ -234,6 +180,12 @@
     </Compile>
     <Compile Include="GeneratorsFront\Stop_and_go\UserControl_stop_and_go.xaml.cs">
       <DependentUpon>UserControl_stop_and_go.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingControl\Block.xaml.cs">
+      <DependentUpon>Block.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingControl\LoadingAnimation.xaml.cs">
+      <DependentUpon>LoadingAnimation.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
