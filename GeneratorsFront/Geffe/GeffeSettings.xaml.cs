@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Windows.Data;
 using System.Linq;
 
-namespace CryptoDesktopApplication.GeneratorsFront.Geffego
+namespace CryptoDesktopApplication.GeneratorsFront.Geffe
 {
 
     public partial class GeffeSettings : UserControl
@@ -240,8 +240,8 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffego
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
             string r1 = r1State.Content as string;
-            string r2 = r1State.Content as string;
-            string r3 = r1State.Content as string;
+            string r2 = r2State.Content as string;
+            string r3 = r3State.Content as string;
 
             Lfsr[] lfsrs = new Lfsr[3];
 

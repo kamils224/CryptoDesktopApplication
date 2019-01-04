@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CryptoDesktopApplication.GeneratorsFront.Geffego"
+             xmlns:local="clr-namespace:CryptoDesktopApplication.GeneratorsFront.Geffe"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    xmlns:control="clr-namespace:CryptoDesktopApplication.LoadingControl" x:Class="CryptoDesktopApplication.GeneratorsFront.Geffego.GeffeSettings"
+    xmlns:control="clr-namespace:CryptoDesktopApplication.LoadingControl" x:Class="CryptoDesktopApplication.GeneratorsFront.Geffe.GeffeSettings"
              mc:Ignorable="d" 
               Height="645" Width="1280" Background="White">
     <Grid x:Name="Settings">
@@ -142,7 +142,7 @@
         <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,137,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="setRegister1_Click" ></Button>
         <Button FontSize="20" x:Name="setRegister2" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,238,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="setRegister2_Click" />
         <Button FontSize="20" x:Name="setRegister3" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,343,0,0" VerticalAlignment="Top" Width="157" Height="35" Click="setRegister3_Click" />
-        <DataGrid DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="239" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
+        <DataGrid CanUserAddRows="False" DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="239" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Width="100" Header="Długość" Binding="{Binding Length}" />
                 <DataGridTextColumn Width="*" Header="Wielomian" Binding="{Binding Polynomial}" />
@@ -160,7 +160,7 @@
                 </Style>
             </Label.Style>
         </Label>
-        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,383,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="setPolynomial_Click" />
+        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,385,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="setPolynomial_Click" />
         <Label ToolTip="Aktulna liczba bitów w rejestrze" x:Name="r1CurrentCounter" FontSize="20" Content="8" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" Width="38" Height="33">
             <Label.Style>
                 <Style TargetType="Label">

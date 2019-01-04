@@ -61,7 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="GeneratorsFront\Geffego\GeffeSettings.xaml">
+    <Page Include="GeneratorsFront\Geffe\GeffeSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -73,11 +73,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GeneratorsFront\Obcinajacy\Settings_obcinajacy.xaml">
+    <Page Include="GeneratorsFront\Shrinking\ShrinkingSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GeneratorsFront\Obcinajacy\UserControl_obcinający.xaml">
+    <Page Include="GeneratorsFront\Shrinking\Settings_obcinajacy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneratorsFront\Shrinking\UserControl_obcinający.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -141,7 +145,7 @@
     <Compile Include="Backend\StopAndGoGenerator.cs" />
     <Compile Include="Backend\ThresholdGenerator.cs" />
     <Compile Include="Fips\FipsTests.cs" />
-    <Compile Include="GeneratorsFront\Geffego\GeffeSettings.xaml.cs">
+    <Compile Include="GeneratorsFront\Geffe\GeffeSettings.xaml.cs">
       <DependentUpon>GeffeSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\Gollmana\Settings_gollmana.xaml.cs">
@@ -150,10 +154,13 @@
     <Compile Include="GeneratorsFront\Gollmana\UserControl_gollmana.xaml.cs">
       <DependentUpon>UserControl_gollmana.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GeneratorsFront\Obcinajacy\Settings_obcinajacy.xaml.cs">
+    <Compile Include="GeneratorsFront\Shrinking\ShrinkingSettings.xaml.cs">
+      <DependentUpon>ShrinkingSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\Shrinking\Settings_obcinajacy.xaml.cs">
       <DependentUpon>Settings_obcinajacy.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GeneratorsFront\Obcinajacy\UserControl_obcinający.xaml.cs">
+    <Compile Include="GeneratorsFront\Shrinking\UserControl_obcinający.xaml.cs">
       <DependentUpon>UserControl_obcinający.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\PolynomialModel.cs" />
