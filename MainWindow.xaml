@@ -19,7 +19,17 @@
                             <MenuItem Header="_Instrukcja użytkowania"/>
                             <MenuItem Header="_Autorzy"/>
                         </MenuItem>
-                        <MenuItem Header="_Generatory">
+                        <MenuItem Header="_Generatory - opis">
+                            <MenuItem Header="_Rejestr LFSR"/>
+                            <MenuItem Header="_Generator Geffego"/>
+                            <MenuItem Header="_Kaskada Gollmana"/>
+                            <MenuItem Header="_Generator progowy"/>
+                            <MenuItem Header="_Generator rozrzedzający"/>
+                            <MenuItem Header="_Generator samodecymujący"/>
+                            <MenuItem Header="_Generator samorozrzedzający"/>
+                            <MenuItem Header="_Generator stop &amp; go"/>
+                        </MenuItem>
+                        <MenuItem Header="_Generatory - działanie">
                             <MenuItem Header="_Rejestr LFSR"/>
                             <MenuItem Header="_Generator Geffego"/>
                             <MenuItem Header="_Kaskada Gollmana"/>

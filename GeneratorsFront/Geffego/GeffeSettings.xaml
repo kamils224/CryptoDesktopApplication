@@ -8,7 +8,7 @@
              mc:Ignorable="d" 
               Height="645" Width="1280" Background="White">
     <Grid x:Name="Settings">
-        <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Generator Geffego - ustawienia" Margin="0,10,0,581"  />
+        <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Generator Geffego - ustawienia" Margin="0,10,0,572"  />
         <Label FontSize="20" Content="Ustaw wartości początkowe rejestrów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="68,137,468,475" RenderTransformOrigin="0.5,0.5">
             <TextBox MaxLength="64"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
@@ -60,9 +60,17 @@
         <materialDesign:PackIcon x:Name="seriesTest" ToolTip="Test serii" Margin="811,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
         <materialDesign:PackIcon x:Name="longSeriesTest" ToolTip="Test długiej serii" Margin="870,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.722,0.54" />
         <materialDesign:PackIcon x:Name="Poker" ToolTip="Test pokerowy" Margin="988,435,0,160" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
-        <Label Content="Wyniki testów FIPS-140-2: " FontSize="20" ToolTip="Badane są tylko ciągi znakowe. Ciągi krótsze niż 20 000 dają wynik negatywny." Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="811,383,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="Wyniki testów FIPS-140-2: " FontSize="20" ToolTip="Badane są tylko ciągi znakowe. Ciągi krótsze niż 20 000 dają wynik negatywny." Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="811,383,0,0" VerticalAlignment="Top" Width="auto" RenderTransformOrigin="0.48,0.676"/>
         <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,137,0,0" VerticalAlignment="Top" Width="157" Height="33" ></Button>
         <Button FontSize="20" x:Name="setRegister2" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,238,0,0" VerticalAlignment="Top" Width="157" Height="33" />
         <Button FontSize="20" x:Name="setRegister3" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,343,0,0" VerticalAlignment="Top" Width="157" Height="35" />
+        <DataGrid AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="239" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Width="100" Header="Długość" Binding="{Binding Length}" />
+                <DataGridTextColumn Width="*" Header="Wielomian" Binding="{Binding Polynomial}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label FontSize="20" Content="Tabela wielomianów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="1018,95,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,383,0,0" VerticalAlignment="Top" Width="178" Height="35" />
     </Grid>
 </UserControl>
