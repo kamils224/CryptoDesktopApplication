@@ -1,5 +1,7 @@
 ﻿using CryptoDesktopApplication.GeneratorsFront;
+using CryptoDesktopApplication.GeneratorsFront.Cascade;
 using CryptoDesktopApplication.GeneratorsFront.Geffe;
+using CryptoDesktopApplication.GeneratorsFront.LfsrGen;
 using CryptoDesktopApplication.GeneratorsFront.SelfDecimation;
 using CryptoDesktopApplication.GeneratorsFront.SelfShrinking;
 using CryptoDesktopApplication.GeneratorsFront.Shrinking;
@@ -30,7 +32,7 @@ namespace CryptoDesktopApplication
         public MainWindow()
         {
             InitializeComponent();
-            MainContainer.Children.Add(new ThresholdSettings());
+            MainContainer.Children.Add(new LfsrGeneratorSettings());
         }
     }
 }

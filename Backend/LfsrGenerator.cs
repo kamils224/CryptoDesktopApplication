@@ -13,6 +13,7 @@ namespace CryptoDesktopApplication.Backend
 
         public LfsrGenerator()
         {
+            Registers = new Lfsr[1];
         }
 
         public LfsrGenerator(Lfsr[] registers)

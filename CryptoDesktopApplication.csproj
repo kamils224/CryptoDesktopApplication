@@ -61,9 +61,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GeneratorsFront\Cascade\CascadeSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\Geffe\GeffeSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="GeneratorsFront\RegisterUserControl.xaml">
       <SubType>Designer</SubType>
@@ -117,8 +125,14 @@
     <Compile Include="Backend\StopAndGoGenerator.cs" />
     <Compile Include="Backend\ThresholdGenerator.cs" />
     <Compile Include="Fips\FipsTests.cs" />
+    <Compile Include="GeneratorsFront\Cascade\CascadeSettings.xaml.cs">
+      <DependentUpon>CascadeSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\Geffe\GeffeSettings.xaml.cs">
       <DependentUpon>GeffeSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml.cs">
+      <DependentUpon>LfsrGeneratorSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\RegisterUserControl.xaml.cs">
       <DependentUpon>RegisterUserControl.xaml</DependentUpon>
@@ -200,9 +214,6 @@
     <Resource Include="Images\wz_rueppela.PNG" />
     <Resource Include="Images\wz_stop_and_go.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GeneratorsFront\Cascade\" />
-    <Folder Include="GeneratorsFront\Lfsr\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

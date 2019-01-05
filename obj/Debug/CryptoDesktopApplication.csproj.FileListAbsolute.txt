@@ -38,3 +38,7 @@ C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Threshold\ThresholdSettings.g.cs
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\RegisterUserControl.baml
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Threshold\ThresholdSettings.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Cascade\CascadeSettings.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Cascade\CascadeSettings.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Lfsr\LfsrGeneratorSettings.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Lfsr\LfsrGeneratorSettings.baml

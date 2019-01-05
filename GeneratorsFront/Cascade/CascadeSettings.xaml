@@ -1,0 +1,75 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptoDesktopApplication.GeneratorsFront.Cascade"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:control="clr-namespace:CryptoDesktopApplication.LoadingControl" x:Class="CryptoDesktopApplication.GeneratorsFront.Cascade.CascadeSettings"
+             mc:Ignorable="d" 
+              Height="645" Width="1280" Background="White">
+    <Grid x:Name="Settings">
+        <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Kaskada Gollmanna - działanie" Margin="0,10,0,572"  />
+        <Label FontSize="20" Content="Podaj liczbę rejestrów i ustaw ich wartości początkowe" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,68,0,0" VerticalAlignment="Top" Width="auto"/>
+        <ScrollViewer  CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="10,115,332,318">
+            <StackPanel x:Name="Lfsr_list" ScrollViewer.VerticalScrollBarVisibility="Visible"  MaxHeight="150">
+            </StackPanel>
+        </ScrollViewer>
+        <Label x:Name="seriesLengthLabel" FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,369,0,0" VerticalAlignment="Top" Width="auto"/>
+        <Label Content="Format generowanego ciągu" FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,332,0,0" VerticalAlignment="Top" Width="auto"/>
+        <TextBox IsReadOnly="True" FontSize="20" x:Name="output" HorizontalAlignment="Left" MinHeight="110" Height="193" MaxHeight="200" Margin="30,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="918"/>
+        <Button FontSize="20" x:Name="saveFileTxt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="790,332,0,0" VerticalAlignment="Top" Width="158" Height="37" Click="saveFileTxt_Click"/>
+        <Button FontSize="20" x:Name="saveFileBin" Content="Zapisz (.bin)" HorizontalAlignment="Left" Margin="790,374,0,0" VerticalAlignment="Top" Width="158" Height="37" Click="saveFileBin_Click" />
+        <Button x:Name="GenerateBtn" Height="81" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="482,332,506,232" Click="GenerateBtn_Click" >
+            <TextBlock TextAlignment="Center" FontSize="30" Text="Generuj ciąg" TextWrapping="Wrap" />
+        </Button>
+        <control:LoadingAnimation Visibility="Collapsed" x:Name="LoadingCircle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="84" Margin="482,477,696,84" Width="102"/>
+        <materialDesign:PackIcon x:Name="singleBit" ToolTip="Test pojedynczych bitów" Margin="1092,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
+        <materialDesign:PackIcon x:Name="seriesTest" ToolTip="Test serii" Margin="974,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
+        <materialDesign:PackIcon x:Name="longSeriesTest" ToolTip="Test długiej serii" Margin="1033,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.722,0.54" />
+        <materialDesign:PackIcon x:Name="poker" ToolTip="Test pokerowy" Margin="1151,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
+        <Label Content="Wyniki testów FIPS-140-2 " FontSize="20" ToolTip="Ciągi krótsze niż 20 000 dają wynik negatywny." Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="974,506,0,0" VerticalAlignment="Top" Width="auto" RenderTransformOrigin="0.48,0.676">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightGray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <DataGrid CanUserAddRows="False" DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="288" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
+            <DataGrid.Columns>
+                <DataGridTextColumn IsReadOnly="True" Width="100" Header="Długość" Binding="{Binding Length}" />
+                <DataGridTextColumn Width="*" Header="Wielomian" Binding="{Binding Polynomial}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label ToolTip="Aby zmienić wielomian, wpisz liczby oddzielone przecinkami. Przykład: 1,3,5 oznacza bity na pozycji pierwszej, trzeciej i piątej licząc od lewej" FontSize="20" Content="Tabela wielomianów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="1018,95,0,0" VerticalAlignment="Top" Width="auto">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightGray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,430,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="setPolynomial_Click" />
+        <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="2" PreviewTextInput="NumberValidationTextBox" x:Name="numOfLfsrTxtBox" ToolTip="Liczba rejestrów" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="150" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="542,73,0,0" />
+        <StackPanel Orientation="Horizontal" Margin="299,372,804,239" RenderTransformOrigin="0.5,0.5">
+            <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="8" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 99 999 999" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <Button Width="20" Height="20" Click="Clear_outputLength"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
+                <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+            </Button>
+        </StackPanel>
+        <ComboBox FontSize="20" x:Name="outputFormatComboBox" Margin="299,334,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="151" Height="37" SelectionChanged="outputFormatComboBox_SelectionChanged">
+            <ComboBoxItem ToolTip="Tekst składający się z zer i jedynek"  x:Name="char_type" Content="Znaki (char)" IsSelected="True"/>
+            <ComboBoxItem ToolTip="Rodzaj kodowania transportowego, kodowanie bajtów za pomocą ciągu znaków" x:Name="base64_type" Content="Base64"/>
+        </ComboBox>
+        <Button FontSize="16" x:Name="createRegistersBtn" Content="Stwórz rejestry" HorizontalAlignment="Left" Margin="713,73,0,0" VerticalAlignment="Top" Width="158" Height="33" Click="createRegistersBtn_Click"/>
+    </Grid>
+</UserControl>
