@@ -496,6 +496,11 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
 
         private void saveFileTxt_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(output.Text))
+            {
+                return;
+            }
+
             Stream myStream;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
@@ -517,7 +522,12 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
 
         private void saveFileBin_Click(object sender, RoutedEventArgs e)
         {
-            if(lastGeneratedFormat==0)
+            if (string.IsNullOrEmpty(output.Text))
+            {
+                return;
+            }
+
+            if (lastGeneratedFormat==0)
             {
                 var chars = (output.Text).ToCharArray();
                 int rozmiar = ((output.Text).Length);

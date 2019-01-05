@@ -139,8 +139,8 @@
                 </Style>
             </Label.Style>
         </Label>
-        <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,137,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="setRegister1_Click" ></Button>
-        <Button FontSize="20" x:Name="setRegister2" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,238,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="setRegister2_Click" />
+        <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,137,0,0" VerticalAlignment="Top" Width="157" Height="36" Click="setRegister1_Click" ></Button>
+        <Button FontSize="20" x:Name="setRegister2" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,238,0,0" VerticalAlignment="Top" Width="157" Height="36" Click="setRegister2_Click" />
         <Button FontSize="20" x:Name="setRegister3" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,343,0,0" VerticalAlignment="Top" Width="157" Height="35" Click="setRegister3_Click" />
         <DataGrid CanUserAddRows="False" DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="239" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
             <DataGrid.Columns>

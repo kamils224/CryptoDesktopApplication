@@ -17,18 +17,18 @@ using System.Collections.Generic;
 using System.Windows.Data;
 using System.Linq;
 
-namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
+namespace CryptoDesktopApplication.GeneratorsFront.SelfShrinking
 {
 
-    public partial class ShrinkingSettings : UserControl
+    public partial class SelfShrinkingSettings : UserControl
     {
         private readonly List<PolynomialModel> _feedbackFunctions = new List<PolynomialModel>();
         private Dictionary<int, int[]> functionsDicts;
-        private ShrinkingGenerator generator = new ShrinkingGenerator();
+        private SelfShrinkingGenerator generator = new SelfShrinkingGenerator();
         string lastGeneratedString= null;
         int lastGeneratedFormat = 0;
 
-        public ShrinkingSettings()
+        public SelfShrinkingSettings()
         {
             InitializeComponent();
             SetFeedbackFunctions();
@@ -39,10 +39,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
         private void Clear_lfsr1(object Sender, RoutedEventArgs e)
         {
             lfsr1.Text = string.Empty;
-        }
-        private void Clear_lfsr2(object Sender, RoutedEventArgs e)
-        {
-            lfsr2.Text = string.Empty;
         }
 
         private void Clear_outputLength(object Sender, RoutedEventArgs e)
@@ -55,12 +51,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
             r1Counter.Content = lfsr1.Text.Length;
         }
 
-        private void lfsr2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            r2Counter.Content = lfsr2.Text.Length;
-        }
-
-
         private void setRegister1_Click(object sender, RoutedEventArgs e)
         {
             var input = lfsr1.Text;
@@ -71,18 +61,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
             }
             r1State.Content = input;
             r1CurrentCounter.Content = input.Length;
-        }
-
-        private void setRegister2_Click(object sender, RoutedEventArgs e)
-        {
-            var input = lfsr2.Text;
-            if (input.Length < 2)
-            {
-                MessageBox.Show("Rejestr musi mieć co najmniej 2 bity!");
-                return;
-            }
-            r2State.Content = input;
-            r2CurrentCounter.Content = input.Length;
         }
 
 
@@ -221,13 +199,10 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
             string r1 = r1State.Content as string;
-            string r2 = r2State.Content as string;
 
-            Lfsr[] lfsrs = new Lfsr[2];
+            Lfsr[] lfsrs = new Lfsr[1];
 
             lfsrs[0] = new Lfsr(r1);
-            lfsrs[1] = new Lfsr(r2);
-
 
             //setting custom feedback function
             ChangeLfsrFeedbackFunctions(lfsrs);
@@ -283,8 +258,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
                                 SetLoadingCircle(false);
                                 MessageBox.Show(ex.Message);
                                 return;
-                            }
-                            
+                            }           
                             lastGeneratedFormat = format;
                             lastGeneratedString = Convert.ToBase64String(generatedBytes);
                             SetOutputText(lastGeneratedString);
@@ -457,8 +431,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
             var registers = generator.Registers;
             Dispatcher.Invoke(() =>
             {
-                r1State.Content = registers[0].ToString();
-                r2State.Content = registers[1].ToString();
+                r1State.Content = registers[0].ToString();  
             });
            
         }

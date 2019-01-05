@@ -33,16 +33,26 @@ namespace CryptoDesktopApplication.Backend
             Registers[0].NextStep();
             var value2 = Registers[0].GetOutputBit();
 
-            while (!value1)
-            {
-                Registers[0].NextStep();
-                value1 = Registers[0].GetOutputBit();
-                Registers[0].NextStep();
-                value2 = Registers[0].GetOutputBit();
+            int breakValue = 1000;
+            int counter = 0;
 
+            while (counter<breakValue)
+            {
+                if (value1)
+                {
+                    return value2;
+                }
+                else
+                {
+                    Registers[0].NextStep();
+                    value1 = Registers[0].GetOutputBit();
+                    Registers[0].NextStep();
+                    value2 = Registers[0].GetOutputBit();
+                }
+                counter++;
             }
 
-            return value2;
+            throw new Exception("Nie znaleziono bitu '1', zmień wartości w rejestrze!");
 
         }
 

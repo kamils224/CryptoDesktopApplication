@@ -65,55 +65,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GeneratorsFront\Gollmana\Settings_gollmana.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Gollmana\UserControl_gollmana.xaml">
+    <Page Include="GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="GeneratorsFront\Shrinking\ShrinkingSettings.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Shrinking\Settings_obcinajacy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Shrinking\UserControl_obcinający.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Progowy\Settings_progowy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Progowy\UserControl_progowy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Rueppela\Settings_rueppela.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Rueppela\UserControl_rueppela.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Samoobcinajacy\Settings_samoobcinajacy.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Samoobcinajacy\UserControl_samoobcinający.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Stop_and_go\Settings_stop_and_go.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="GeneratorsFront\Stop_and_go\UserControl_stop_and_go.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -148,46 +104,13 @@
     <Compile Include="GeneratorsFront\Geffe\GeffeSettings.xaml.cs">
       <DependentUpon>GeffeSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GeneratorsFront\Gollmana\Settings_gollmana.xaml.cs">
-      <DependentUpon>Settings_gollmana.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Gollmana\UserControl_gollmana.xaml.cs">
-      <DependentUpon>UserControl_gollmana.xaml</DependentUpon>
+    <Compile Include="GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml.cs">
+      <DependentUpon>SelfShrinkingSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\Shrinking\ShrinkingSettings.xaml.cs">
       <DependentUpon>ShrinkingSettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GeneratorsFront\Shrinking\Settings_obcinajacy.xaml.cs">
-      <DependentUpon>Settings_obcinajacy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Shrinking\UserControl_obcinający.xaml.cs">
-      <DependentUpon>UserControl_obcinający.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GeneratorsFront\PolynomialModel.cs" />
-    <Compile Include="GeneratorsFront\Progowy\Settings_progowy.xaml.cs">
-      <DependentUpon>Settings_progowy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Progowy\UserControl_progowy.xaml.cs">
-      <DependentUpon>UserControl_progowy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Rueppela\Settings_rueppela.xaml.cs">
-      <DependentUpon>Settings_rueppela.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Rueppela\UserControl_rueppela.xaml.cs">
-      <DependentUpon>UserControl_rueppela.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Samoobcinajacy\Settings_samoobcinajacy.xaml.cs">
-      <DependentUpon>Settings_samoobcinajacy.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Samoobcinajacy\UserControl_samoobcinający.xaml.cs">
-      <DependentUpon>UserControl_samoobcinający.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Stop_and_go\Settings_stop_and_go.xaml.cs">
-      <DependentUpon>Settings_stop_and_go.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GeneratorsFront\Stop_and_go\UserControl_stop_and_go.xaml.cs">
-      <DependentUpon>UserControl_stop_and_go.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LoadingControl\Block.xaml.cs">
       <DependentUpon>Block.xaml</DependentUpon>
     </Compile>
@@ -248,6 +171,12 @@
     <Resource Include="Images\wz_rozrzedzajacy.png" />
     <Resource Include="Images\wz_rueppela.PNG" />
     <Resource Include="Images\wz_stop_and_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GeneratorsFront\Gollmana\" />
+    <Folder Include="GeneratorsFront\Progowy\" />
+    <Folder Include="GeneratorsFront\Rueppela\" />
+    <Folder Include="GeneratorsFront\Stop_and_go\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
