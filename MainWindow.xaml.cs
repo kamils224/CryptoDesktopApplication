@@ -1,4 +1,5 @@
 ﻿using CryptoDesktopApplication.GeneratorsFront.Geffe;
+using CryptoDesktopApplication.GeneratorsFront.Shrinking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace CryptoDesktopApplication
         public MainWindow()
         {
             InitializeComponent();
-            MainContainer.Children.Add(new GeffeSettings());
+            MainContainer.Children.Add(new ShrinkingSettings());
         }
     }
 }

@@ -24,7 +24,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
     {
         private readonly List<PolynomialModel> _feedbackFunctions = new List<PolynomialModel>();
         private Dictionary<int, int[]> functionsDicts;
-        private GeffesGenerator generator = new GeffesGenerator();
+        private ShrinkingGenerator generator = new ShrinkingGenerator();
         string lastGeneratedString= null;
         int lastGeneratedFormat = 0;
 
@@ -221,14 +221,12 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
             string r1 = r1State.Content as string;
-            string r2 = r1State.Content as string;
-            string r3 = r1State.Content as string;
+            string r2 = r2State.Content as string;
 
-            Lfsr[] lfsrs = new Lfsr[3];
+            Lfsr[] lfsrs = new Lfsr[2];
 
             lfsrs[0] = new Lfsr(r1);
             lfsrs[1] = new Lfsr(r2);
-            lfsrs[2] = new Lfsr(r3);
 
 
             //setting custom feedback function

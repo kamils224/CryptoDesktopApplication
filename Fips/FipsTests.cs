@@ -352,6 +352,9 @@ namespace CryptoDesktopApplication.Fips
                 }
             }
 
+            if (series > maxSeries)
+                maxSeries = series;
+
             LongSeriesTestResult result = new LongSeriesTestResult();
             result.LongestSeries = maxSeries;
             if (maxSeries >= 26)

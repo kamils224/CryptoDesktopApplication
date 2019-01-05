@@ -85,7 +85,7 @@
                 </Style>
             </Label.Style>
         </Label>
-        <TextBox IsReadOnly="True" FontSize="20" x:Name="output" HorizontalAlignment="Left" MinHeight="110" Height="210" MaxHeight="200" Margin="18,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="922"/>
+        <TextBox IsReadOnly="True" FontSize="20" x:Name="output" HorizontalAlignment="Left" MinHeight="110" Height="210" MaxHeight="200" Margin="18,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="936"/>
         <Button FontSize="20" x:Name="saveFileTxt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="797,340,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="saveFileTxt_Click"/>
         <Button FontSize="20" x:Name="saveFileBin" Content="Zapisz (.bin)" HorizontalAlignment="Left" Margin="797,375,0,0" VerticalAlignment="Top" Width="157" Height="33" Click="saveFileBin_Click" />
         <Button x:Name="GenerateBtn" Height="69" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="487,339,502,237" Click="GenerateBtn_Click" >
