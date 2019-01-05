@@ -14,14 +14,14 @@
         <StackPanel Orientation="Horizontal" Margin="68,137,468,475" RenderTransformOrigin="0.5,0.5">
             <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="64"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr1_TextChanged" />
             <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
-                <materialDesign:PackIcon ToolTip="Usuwa tekst" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+                <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
         </StackPanel>
         <Label FontSize="20" Content="Rejestr 1" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,100,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="68,238,468,374" RenderTransformOrigin="0.5,0.5">
             <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="64" x:Name="lfsr2" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr2_TextChanged" />
             <Button Width="20" Height="20" Click="Clear_lfsr2"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
-                <materialDesign:PackIcon ToolTip="Usuwa tekst" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+                <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
         </StackPanel>
         <Label FontSize="20" Content="Rejestr 2" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,201,0,0" VerticalAlignment="Top" Width="auto"/>
@@ -29,7 +29,7 @@
         <StackPanel Orientation="Horizontal" Margin="305,379,798,232" RenderTransformOrigin="0.5,0.5">
             <TextBox DataObject.Pasting="TextBoxPasting" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 4 294 967 295 (uint)." FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             <Button Width="20" Height="20" Click="Clear_outputLength"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
-                <materialDesign:PackIcon Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
+                <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
         </StackPanel>
         <Label ToolTip="Liczba bitów" x:Name="r1Counter" FontSize="20" Content="0" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,136,0,0" VerticalAlignment="Top" Width="38" Height="33">
@@ -96,7 +96,7 @@
         <materialDesign:PackIcon x:Name="seriesTest" ToolTip="Test serii" Margin="974,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
         <materialDesign:PackIcon x:Name="longSeriesTest" ToolTip="Test długiej serii" Margin="1033,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.722,0.54" />
         <materialDesign:PackIcon x:Name="poker" ToolTip="Test pokerowy" Margin="1151,558,0,37" Foreground="#FF2196F3" Kind="CloseCircle" Width="54" Height="50" VerticalAlignment="Center" />
-        <Label Content="Wyniki testów FIPS-140-2 " FontSize="20" ToolTip="Badane są tylko ciągi znakowe. Ciągi krótsze niż 20 000 dają wynik negatywny." Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="974,506,0,0" VerticalAlignment="Top" Width="auto" RenderTransformOrigin="0.48,0.676">
+        <Label Content="Wyniki testów FIPS-140-2 " FontSize="20" ToolTip="Ciągi krótsze niż 20 000 dają wynik negatywny." Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="974,506,0,0" VerticalAlignment="Top" Width="auto" RenderTransformOrigin="0.48,0.676">
             <Label.Style>
                 <Style TargetType="Label">
                     <Setter Property="Background" Value="Transparent" />
