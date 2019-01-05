@@ -264,6 +264,7 @@ namespace CryptoDesktopApplication.Backend
             }
 
             FeedbackFunctionInit();
+            OutputBit = Register[Register.Length - 1];
         }
 
         public Lfsr(int length)
@@ -279,6 +280,7 @@ namespace CryptoDesktopApplication.Backend
             }
 
             FeedbackFunctionInit();
+            OutputBit = Register[Register.Length - 1];
         }
 
         public Lfsr(string registerValues)
@@ -293,6 +295,7 @@ namespace CryptoDesktopApplication.Backend
             }
 
             FeedbackFunctionInit();
+            OutputBit = Register[Register.Length - 1];
         }
 
         public void SetRegisterValues(BitArray array)

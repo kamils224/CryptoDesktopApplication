@@ -250,6 +250,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
             Task.Run(() =>
             {
                 SetLoadingCircle(true);
+                disableButtons();
                 ResetFipsIcons();
                 byte[] generatedBytes = null;
                 switch (format)
@@ -295,6 +296,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
                         break;
                 }
                 UpdateRegisterState(generator);
+                enableButtons();
 
                 if (seriesLength >= 20000)
                 {
@@ -668,6 +670,40 @@ namespace CryptoDesktopApplication.GeneratorsFront.Shrinking
             }
 
             PolynomialDataGrid.Items.Refresh();
+        }
+
+        private void disableButtons()
+        {
+            Dispatcher.Invoke(() => {
+                bool state = false;
+
+                GenerateBtn.IsEnabled = state;
+                saveFileTxt.IsEnabled = state;
+                saveFileBin.IsEnabled = state;
+                setPolynomial.IsEnabled = state;
+                setRegister1.IsEnabled = state;
+                setRegister2.IsEnabled = state;
+                outputFormatComboBox.IsEnabled = state;
+
+            });
+
+
+        }
+        private void enableButtons()
+        {
+            Dispatcher.Invoke(() => {
+                bool state = true;
+
+                GenerateBtn.IsEnabled = state;
+                saveFileTxt.IsEnabled = state;
+                saveFileBin.IsEnabled = state;
+                setPolynomial.IsEnabled = state;
+                setRegister1.IsEnabled = state;
+                setRegister2.IsEnabled = state;
+                outputFormatComboBox.IsEnabled = state;
+
+
+            });
         }
 
     }

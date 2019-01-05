@@ -17,18 +17,18 @@ using System.Collections.Generic;
 using System.Windows.Data;
 using System.Linq;
 
-namespace CryptoDesktopApplication.GeneratorsFront.Geffe
+namespace CryptoDesktopApplication.GeneratorsFront.StopAndGo
 {
 
-    public partial class GeffeSettings : UserControl
+    public partial class StopAndGoSettings : UserControl
     {
         private readonly List<PolynomialModel> _feedbackFunctions = new List<PolynomialModel>();
         private Dictionary<int, int[]> functionsDicts;
-        private GeffesGenerator generator = new GeffesGenerator();
+        private StopAndGoGenerator generator = new StopAndGoGenerator();
         string lastGeneratedString= null;
         int lastGeneratedFormat = 0;
 
-        public GeffeSettings()
+        public StopAndGoSettings()
         {
             InitializeComponent();
             SetFeedbackFunctions();

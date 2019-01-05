@@ -34,7 +34,7 @@
         <Label FontSize="20" Content="Rejestr 3" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,306,0,0" VerticalAlignment="Top" Width="auto"/>
         <Label x:Name="seriesLengthLabel" FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,453,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="302,456,801,155" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="TextBoxPasting" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 4 294 967 295 (uint)." FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="8" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 99 999 999" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             <Button Width="20" Height="20" Click="Clear_outputLength"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>

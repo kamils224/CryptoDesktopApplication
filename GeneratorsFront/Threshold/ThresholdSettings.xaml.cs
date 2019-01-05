@@ -17,92 +17,28 @@ using System.Collections.Generic;
 using System.Windows.Data;
 using System.Linq;
 
-namespace CryptoDesktopApplication.GeneratorsFront.Geffe
+namespace CryptoDesktopApplication.GeneratorsFront.Threshold
 {
 
-    public partial class GeffeSettings : UserControl
+    public partial class ThresholdSettings : UserControl
     {
         private readonly List<PolynomialModel> _feedbackFunctions = new List<PolynomialModel>();
         private Dictionary<int, int[]> functionsDicts;
-        private GeffesGenerator generator = new GeffesGenerator();
+        private ThresholdGenerator generator = null;
         string lastGeneratedString= null;
         int lastGeneratedFormat = 0;
+        private Label[] registersLabel = null;
 
-        public GeffeSettings()
+        public ThresholdSettings()
         {
             InitializeComponent();
             SetFeedbackFunctions();
             SetFeedbackFunctionsTable();
         }
 
-
-        private void Clear_lfsr1(object Sender, RoutedEventArgs e)
-        {
-            lfsr1.Text = string.Empty;
-        }
-        private void Clear_lfsr2(object Sender, RoutedEventArgs e)
-        {
-            lfsr2.Text = string.Empty;
-        }
-        private void Clear_lfsr3(object Sender, RoutedEventArgs e)
-        {
-            lfsr3.Text = string.Empty;
-        }
-
         private void Clear_outputLength(object Sender, RoutedEventArgs e)
         {
             outputLength.Text = string.Empty;
-        }
-
-        private void lfsr1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            r1Counter.Content = lfsr1.Text.Length;
-        }
-
-        private void lfsr2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            r2Counter.Content = lfsr2.Text.Length;
-        }
-
-        private void lfsr3_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            r3Counter.Content = lfsr3.Text.Length;
-        }
-
-        private void setRegister1_Click(object sender, RoutedEventArgs e)
-        {
-            var input = lfsr1.Text;
-            if (input.Length < 2)
-            {
-                MessageBox.Show("Rejestr musi mieć co najmniej 2 bity!");
-                return;
-            }
-            r1State.Content = input;
-            r1CurrentCounter.Content = input.Length;
-        }
-
-        private void setRegister2_Click(object sender, RoutedEventArgs e)
-        {
-            var input = lfsr2.Text;
-            if (input.Length < 2)
-            {
-                MessageBox.Show("Rejestr musi mieć co najmniej 2 bity!");
-                return;
-            }
-            r2State.Content = input;
-            r2CurrentCounter.Content = input.Length;
-        }
-
-        private void setRegister3_Click(object sender, RoutedEventArgs e)
-        {
-            var input = lfsr3.Text;
-            if (input.Length < 2)
-            {
-                MessageBox.Show("Rejestr musi mieć co najmniej 2 bity!");
-                return;
-            }
-            r3State.Content = input;
-            r3CurrentCounter.Content = input.Length;
         }
 
         #region InputValidation
@@ -239,16 +175,17 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
 
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
-            string r1 = r1State.Content as string;
-            string r2 = r2State.Content as string;
-            string r3 = r3State.Content as string;
+            if (generator == null || registersLabel==null)
+            {
+                return;
+            }
+            
+            Lfsr[] lfsrs = new Lfsr[registersLabel.Length];
 
-            Lfsr[] lfsrs = new Lfsr[3];
-
-            lfsrs[0] = new Lfsr(r1);
-            lfsrs[1] = new Lfsr(r2);
-            lfsrs[2] = new Lfsr(r3);
-
+            for (int i = 0; i < lfsrs.Length; i++)
+            {
+                lfsrs[i] = new Lfsr(registersLabel[i].Content as string);
+            }
 
             //setting custom feedback function
             ChangeLfsrFeedbackFunctions(lfsrs);
@@ -273,20 +210,41 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
                 SetLoadingCircle(true);
                 disableButtons();
                 ResetFipsIcons();
+
+
                 byte[] generatedBytes = null;
                 switch (format)
                 {
                     case 0:
                         {
                             lastGeneratedFormat = format;
-                            lastGeneratedString = new string(generator.GenerateBitsAsChars(seriesLength));
+                            try
+                            {
+                                lastGeneratedString = new string(generator.GenerateBitsAsChars(seriesLength));
+                            }
+                            catch (Exception ex)
+                            {
+                                SetLoadingCircle(false);
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }
+                            
                             SetOutputText(lastGeneratedString);
                             SetLoadingCircle(false);
                             break;
                         }
                     case 1:
                         {
-                            generatedBytes = generator.GenerateBytes(seriesLength);
+                            try
+                            {
+                                generatedBytes = generator.GenerateBytes(seriesLength);
+                            }
+                            catch (Exception ex)
+                            {
+                                SetLoadingCircle(false);
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }           
                             lastGeneratedFormat = format;
                             lastGeneratedString = Convert.ToBase64String(generatedBytes);
                             SetOutputText(lastGeneratedString);
@@ -298,7 +256,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
                 }
                 UpdateRegisterState(generator);
                 enableButtons();
-
                 if (seriesLength >= 20000)
                 {
                     SingleBitTestResult singleBitResult = null;
@@ -452,7 +409,45 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
         }
 
 
+        private void disableButtons()
+        {
+            Dispatcher.Invoke(() => {
+                bool state = false;
 
+                GenerateBtn.IsEnabled = state;
+                saveFileTxt.IsEnabled = state;
+                saveFileBin.IsEnabled = state;
+                setPolynomial.IsEnabled = state;
+                createRegistersBtn.IsEnabled = state;
+                outputFormatComboBox.IsEnabled = state;
+
+                for (int i = 0; i < Lfsr_list.Children.Count; i++)
+                {
+                    ((RegisterUserControl)Lfsr_list.Children[i]).setRegister.IsEnabled = state;
+                }
+            });
+
+
+        }
+        private void enableButtons()
+        {
+            Dispatcher.Invoke(() => {
+                bool state = true;
+
+                GenerateBtn.IsEnabled = state;
+                saveFileTxt.IsEnabled = state;
+                saveFileBin.IsEnabled = state;
+                setPolynomial.IsEnabled = state;
+                createRegistersBtn.IsEnabled = state;
+                outputFormatComboBox.IsEnabled = state;
+
+                for (int i = 0; i < Lfsr_list.Children.Count; i++)
+                {
+                    ((RegisterUserControl)Lfsr_list.Children[i]).setRegister.IsEnabled = state;
+                }
+
+            });
+        }
 
 
         private void UpdateRegisterState(LfsrGenerator generator)
@@ -460,9 +455,10 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
             var registers = generator.Registers;
             Dispatcher.Invoke(() =>
             {
-                r1State.Content = registers[0].ToString();
-                r2State.Content = registers[1].ToString();
-                r3State.Content = registers[2].ToString();
+                for (int i = 0; i < registersLabel.Length; i++)
+                {
+                    registersLabel[i].Content = registers[i].ToString();
+                }
             });
            
         }
@@ -674,41 +670,36 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
             PolynomialDataGrid.Items.Refresh();
         }
 
-        private void disableButtons()
+        private void createRegistersBtn_Click(object sender, RoutedEventArgs e)
         {
-            Dispatcher.Invoke(() => {
-                bool state = false;
+            int numOfRegisters = int.Parse(numOfLfsrTxtBox.Text);
+            if (numOfRegisters % 2 == 0)
+            {
+                MessageBox.Show("Liczba rejestrów musi być nieparzysta!");
+                return;
+            }
 
-                GenerateBtn.IsEnabled = state;
-                saveFileTxt.IsEnabled = state;
-                saveFileBin.IsEnabled = state;
-                setPolynomial.IsEnabled = state;
-                setRegister1.IsEnabled = state;
-                setRegister2.IsEnabled = state;
-                setRegister3.IsEnabled = state;
-                outputFormatComboBox.IsEnabled = state;
+            Lfsr_list.Children.Clear();
+            registersLabel = new Label[numOfRegisters];
 
-            });
+            for (int i = 0; i < numOfRegisters; i++)
+            {
+                RegisterUserControl register = new RegisterUserControl();
+                register.RegisterNumberLabel.Content = "Rejestr " + (i + 1);
+                if (i % 2 == 0)
+                {
+                    register.MainGrid.Background = Brushes.LightYellow;
+                }
+                Lfsr_list.Children.Add(register);
+                registersLabel[i] = register.rState;
+            }
+            Lfsr[] registers = new Lfsr[numOfRegisters];
+            for (int i = 0; i < registers.Length; i++)
+            {
+                registers[i] = new Lfsr(registersLabel[i].Content as string);
+            }
 
-
+            generator = new ThresholdGenerator(registers);
         }
-        private void enableButtons()
-        {
-            Dispatcher.Invoke(() => {
-                bool state = true;
-
-                GenerateBtn.IsEnabled = state;
-                saveFileTxt.IsEnabled = state;
-                saveFileBin.IsEnabled = state;
-                setPolynomial.IsEnabled = state;
-                setRegister1.IsEnabled = state;
-                setRegister2.IsEnabled = state;
-                setRegister3.IsEnabled = state;
-                outputFormatComboBox.IsEnabled = state;
-
-
-            });
-        }
-
     }
 }

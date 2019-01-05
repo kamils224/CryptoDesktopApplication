@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\App.xaml
-6-997579789
+10-132589016
 
-23323670776
+27978319781
 15884686890
-GeneratorsFront\Geffe\GeffeSettings.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml;GeneratorsFront\Shrinking\ShrinkingSettings.xaml;LoadingControl\Block.xaml;LoadingControl\LoadingAnimation.xaml;MainWindow.xaml;
+GeneratorsFront\Geffe\GeffeSettings.xaml;GeneratorsFront\RegisterUserControl.xaml;GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml;GeneratorsFront\Shrinking\ShrinkingSettings.xaml;GeneratorsFront\StopAndGo\StopAndGoSettings.xaml;GeneratorsFront\Threshold\ThresholdSettings.xaml;LoadingControl\Block.xaml;LoadingControl\LoadingAnimation.xaml;MainWindow.xaml;
 
 False
 

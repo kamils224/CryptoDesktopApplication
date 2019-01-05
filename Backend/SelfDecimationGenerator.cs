@@ -28,7 +28,7 @@ namespace CryptoDesktopApplication.Backend
 
         protected override bool GenerateOneBit()
         {
-            Registers[0].NextStep();
+            //Registers[0].NextStep();
             bool output = Registers[0].GetOutputBit();
 
             if (output)

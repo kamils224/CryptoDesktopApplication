@@ -65,11 +65,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GeneratorsFront\RegisterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="GeneratorsFront\Shrinking\ShrinkingSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneratorsFront\StopAndGo\StopAndGoSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneratorsFront\Threshold\ThresholdSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -104,6 +120,12 @@
     <Compile Include="GeneratorsFront\Geffe\GeffeSettings.xaml.cs">
       <DependentUpon>GeffeSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorsFront\RegisterUserControl.xaml.cs">
+      <DependentUpon>RegisterUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml.cs">
+      <DependentUpon>SelfDecimationSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml.cs">
       <DependentUpon>SelfShrinkingSettings.xaml</DependentUpon>
     </Compile>
@@ -111,6 +133,12 @@
       <DependentUpon>ShrinkingSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\PolynomialModel.cs" />
+    <Compile Include="GeneratorsFront\StopAndGo\StopAndGoSettings.xaml.cs">
+      <DependentUpon>StopAndGoSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\Threshold\ThresholdSettings.xaml.cs">
+      <DependentUpon>ThresholdSettings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoadingControl\Block.xaml.cs">
       <DependentUpon>Block.xaml</DependentUpon>
     </Compile>
@@ -173,10 +201,8 @@
     <Resource Include="Images\wz_stop_and_go.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GeneratorsFront\Gollmana\" />
-    <Folder Include="GeneratorsFront\Progowy\" />
-    <Folder Include="GeneratorsFront\Rueppela\" />
-    <Folder Include="GeneratorsFront\Stop_and_go\" />
+    <Folder Include="GeneratorsFront\Cascade\" />
+    <Folder Include="GeneratorsFront\Lfsr\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

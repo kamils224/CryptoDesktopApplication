@@ -17,18 +17,18 @@ using System.Collections.Generic;
 using System.Windows.Data;
 using System.Linq;
 
-namespace CryptoDesktopApplication.GeneratorsFront.Geffe
+namespace CryptoDesktopApplication.GeneratorsFront.SelfDecimation
 {
 
-    public partial class GeffeSettings : UserControl
+    public partial class SelfDecimationSettings : UserControl
     {
         private readonly List<PolynomialModel> _feedbackFunctions = new List<PolynomialModel>();
         private Dictionary<int, int[]> functionsDicts;
-        private GeffesGenerator generator = new GeffesGenerator();
+        private SelfDecimationGenerator generator = new SelfDecimationGenerator();
         string lastGeneratedString= null;
         int lastGeneratedFormat = 0;
 
-        public GeffeSettings()
+        public SelfDecimationSettings()
         {
             InitializeComponent();
             SetFeedbackFunctions();
@@ -40,14 +40,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
         {
             lfsr1.Text = string.Empty;
         }
-        private void Clear_lfsr2(object Sender, RoutedEventArgs e)
-        {
-            lfsr2.Text = string.Empty;
-        }
-        private void Clear_lfsr3(object Sender, RoutedEventArgs e)
-        {
-            lfsr3.Text = string.Empty;
-        }
 
         private void Clear_outputLength(object Sender, RoutedEventArgs e)
         {
@@ -57,16 +49,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
         private void lfsr1_TextChanged(object sender, TextChangedEventArgs e)
         {
             r1Counter.Content = lfsr1.Text.Length;
-        }
-
-        private void lfsr2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            r2Counter.Content = lfsr2.Text.Length;
-        }
-
-        private void lfsr3_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            r3Counter.Content = lfsr3.Text.Length;
         }
 
         private void setRegister1_Click(object sender, RoutedEventArgs e)
@@ -81,29 +63,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
             r1CurrentCounter.Content = input.Length;
         }
 
-        private void setRegister2_Click(object sender, RoutedEventArgs e)
-        {
-            var input = lfsr2.Text;
-            if (input.Length < 2)
-            {
-                MessageBox.Show("Rejestr musi mieć co najmniej 2 bity!");
-                return;
-            }
-            r2State.Content = input;
-            r2CurrentCounter.Content = input.Length;
-        }
-
-        private void setRegister3_Click(object sender, RoutedEventArgs e)
-        {
-            var input = lfsr3.Text;
-            if (input.Length < 2)
-            {
-                MessageBox.Show("Rejestr musi mieć co najmniej 2 bity!");
-                return;
-            }
-            r3State.Content = input;
-            r3CurrentCounter.Content = input.Length;
-        }
 
         #region InputValidation
 
@@ -240,15 +199,10 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
         private void GenerateBtn_Click(object sender, RoutedEventArgs e)
         {
             string r1 = r1State.Content as string;
-            string r2 = r2State.Content as string;
-            string r3 = r3State.Content as string;
 
-            Lfsr[] lfsrs = new Lfsr[3];
+            Lfsr[] lfsrs = new Lfsr[1];
 
             lfsrs[0] = new Lfsr(r1);
-            lfsrs[1] = new Lfsr(r2);
-            lfsrs[2] = new Lfsr(r3);
-
 
             //setting custom feedback function
             ChangeLfsrFeedbackFunctions(lfsrs);
@@ -257,6 +211,13 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
             {
                 generator.ChangeRegister(lfsrs[i], i);
             }
+
+            int dValue = 0;
+            int kValue = 0;
+            dValue = int.Parse(D_value.Text);
+            kValue = int.Parse(K_value.Text);
+            generator.D_value = dValue;
+            generator.K_value = kValue;
 
             var format = outputFormatComboBox.SelectedIndex;
 
@@ -279,14 +240,33 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
                     case 0:
                         {
                             lastGeneratedFormat = format;
-                            lastGeneratedString = new string(generator.GenerateBitsAsChars(seriesLength));
+                            try
+                            {
+                                lastGeneratedString = new string(generator.GenerateBitsAsChars(seriesLength));
+                            }
+                            catch (Exception ex)
+                            {
+                                SetLoadingCircle(false);
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }
+                            
                             SetOutputText(lastGeneratedString);
                             SetLoadingCircle(false);
                             break;
                         }
                     case 1:
                         {
-                            generatedBytes = generator.GenerateBytes(seriesLength);
+                            try
+                            {
+                                generatedBytes = generator.GenerateBytes(seriesLength);
+                            }
+                            catch (Exception ex)
+                            {
+                                SetLoadingCircle(false);
+                                MessageBox.Show(ex.Message);
+                                return;
+                            }           
                             lastGeneratedFormat = format;
                             lastGeneratedString = Convert.ToBase64String(generatedBytes);
                             SetOutputText(lastGeneratedString);
@@ -460,9 +440,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
             var registers = generator.Registers;
             Dispatcher.Invoke(() =>
             {
-                r1State.Content = registers[0].ToString();
-                r2State.Content = registers[1].ToString();
-                r3State.Content = registers[2].ToString();
+                r1State.Content = registers[0].ToString();  
             });
            
         }
@@ -684,8 +662,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
                 saveFileBin.IsEnabled = state;
                 setPolynomial.IsEnabled = state;
                 setRegister1.IsEnabled = state;
-                setRegister2.IsEnabled = state;
-                setRegister3.IsEnabled = state;
                 outputFormatComboBox.IsEnabled = state;
 
             });
@@ -702,8 +678,6 @@ namespace CryptoDesktopApplication.GeneratorsFront.Geffe
                 saveFileBin.IsEnabled = state;
                 setPolynomial.IsEnabled = state;
                 setRegister1.IsEnabled = state;
-                setRegister2.IsEnabled = state;
-                setRegister3.IsEnabled = state;
                 outputFormatComboBox.IsEnabled = state;
 
 

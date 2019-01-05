@@ -1,6 +1,10 @@
-﻿using CryptoDesktopApplication.GeneratorsFront.Geffe;
+﻿using CryptoDesktopApplication.GeneratorsFront;
+using CryptoDesktopApplication.GeneratorsFront.Geffe;
+using CryptoDesktopApplication.GeneratorsFront.SelfDecimation;
 using CryptoDesktopApplication.GeneratorsFront.SelfShrinking;
 using CryptoDesktopApplication.GeneratorsFront.Shrinking;
+using CryptoDesktopApplication.GeneratorsFront.StopAndGo;
+using CryptoDesktopApplication.GeneratorsFront.Threshold;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +30,7 @@ namespace CryptoDesktopApplication
         public MainWindow()
         {
             InitializeComponent();
-            MainContainer.Children.Add(new SelfShrinkingSettings());
+            MainContainer.Children.Add(new ThresholdSettings());
         }
     }
 }

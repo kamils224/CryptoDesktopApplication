@@ -19,7 +19,7 @@ namespace CryptoDesktopApplication.Backend
             Registers = lfsrs;
 
         }
-
+         
 
         public StopAndGoGenerator(Lfsr[] registers) : base(registers)
         {
