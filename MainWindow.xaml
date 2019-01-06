@@ -13,13 +13,13 @@
                     <RowDefinition Height="75"/>
                 </Grid.RowDefinitions>
                 <DockPanel Margin="0,0,0,-644">
-                    <Menu IsMainMenu="True" Grid.Row="0" DockPanel.Dock="Top">
-                        <MenuItem Header="_Strona główna">
+                    <Menu Foreground="White" Background="#282828" IsMainMenu="True" Grid.Row="0" DockPanel.Dock="Top">
+                        <MenuItem x:Name="Main_page" Header="_Strona główna">
                             <MenuItem Header="_Wstęp"/>
                             <MenuItem Header="_Instrukcja użytkowania"/>
                             <MenuItem Header="_Autorzy"/>
                         </MenuItem>
-                        <MenuItem Header="_Generatory - opis">
+                        <MenuItem x:Name="Generators_description" Header="_Generatory - opis">
                             <MenuItem Header="_Rejestr LFSR"/>
                             <MenuItem Header="_Generator Geffego"/>
                             <MenuItem Header="_Kaskada Gollmana"/>
@@ -29,22 +29,22 @@
                             <MenuItem Header="_Generator samorozrzedzający"/>
                             <MenuItem Header="_Generator stop &amp; go"/>
                         </MenuItem>
-                        <MenuItem Header="_Generatory - działanie">
-                            <MenuItem Header="_Rejestr LFSR"/>
-                            <MenuItem Header="_Generator Geffego"/>
-                            <MenuItem Header="_Kaskada Gollmana"/>
-                            <MenuItem Header="_Generator progowy"/>
-                            <MenuItem Header="_Generator rozrzedzający"/>
-                            <MenuItem Header="_Generator samodecymujący"/>
-                            <MenuItem Header="_Generator samorozrzedzający"/>
-                            <MenuItem Header="_Generator stop &amp; go"/>
+                        <MenuItem x:Name="Generators_application" Header="_Generatory - działanie">
+                            <MenuItem x:Name="lfsrTab" Header="_Rejestr LFSR" Click="lfsrTab_Click"/>
+                            <MenuItem x:Name="geffeTab" Header="_Generator Geffego" Click="geffeTab_Click"/>
+                            <MenuItem x:Name="cascadeTab" Header="_Kaskada Gollmana" Click="cascadeTab_Click"/>
+                            <MenuItem x:Name="thresholdTab" Header="_Generator progowy" Click="thresholdTab_Click"/>
+                            <MenuItem x:Name="shrinkingTab" Header="_Generator obcinający" Click="shrinkingTab_Click"/>
+                            <MenuItem x:Name="selfdecimationTab" Header="_Generator samodecymujący" Click="selfdecimationTab_Click"/>
+                            <MenuItem x:Name="selfshrinkingTab" Header="_Generator samoobcinający" Click="selfshrinkingTab_Click"/>
+                            <MenuItem x:Name="stopandgoTab" Header="_Generator stop &amp; go" Click="stopandgoTab_Click"/>
                         </MenuItem>
-                        <MenuItem Header="_Szyfry strumieniowe">
+                        <MenuItem x:Name="Stream_ciphers" Header="_Szyfry strumieniowe">
                             <MenuItem Header="_Opis"/>
                             <MenuItem Header="_Działanie"/>
                             <MenuItem Header="_Szyfrator A5/1"/>
                         </MenuItem>
-                        <MenuItem Header="_Testy FIPS">
+                        <MenuItem x:Name="Fips_tests" Header="_Testy FIPS">
                             <MenuItem Header="_Opis"/>
                             <MenuItem Header="_Kalkulator"/>
                         </MenuItem>

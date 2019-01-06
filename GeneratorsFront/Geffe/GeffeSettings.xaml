@@ -12,21 +12,21 @@
         <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Generator Geffego - działanie" Margin="0,10,0,572"  />
         <Label FontSize="20" Content="Ustaw wartości początkowe rejestrów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="68,137,468,475" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="64"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr1_TextChanged" />
+            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="32"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr1_TextChanged" />
             <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
         </StackPanel>
         <Label FontSize="20" Content="Rejestr 1" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,100,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="68,238,468,374" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="64" x:Name="lfsr2" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr2_TextChanged" />
+            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="32" x:Name="lfsr2" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr2_TextChanged" />
             <Button Width="20" Height="20" Click="Clear_lfsr2"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
         </StackPanel>
         <Label FontSize="20" Content="Rejestr 2" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,201,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="68,343,468,267" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="64" x:Name="lfsr3" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr3_TextChanged" />
+            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="32" x:Name="lfsr3" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr3_TextChanged" />
             <Button Width="20" Height="20" Click="Clear_lfsr3"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
@@ -34,7 +34,7 @@
         <Label FontSize="20" Content="Rejestr 3" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,306,0,0" VerticalAlignment="Top" Width="auto"/>
         <Label x:Name="seriesLengthLabel" FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="24,453,0,0" VerticalAlignment="Top" Width="auto"/>
         <StackPanel Orientation="Horizontal" Margin="302,456,801,155" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="8" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 99 999 999" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+            <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="9" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 99 999 999" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="151" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             <Button Width="20" Height="20" Click="Clear_outputLength"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>

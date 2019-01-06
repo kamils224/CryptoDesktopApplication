@@ -34,5 +34,53 @@ namespace CryptoDesktopApplication
             InitializeComponent();
             MainContainer.Children.Add(new LfsrGeneratorSettings());
         }
+
+        private void lfsrTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new LfsrGeneratorSettings());
+        }
+
+        private void geffeTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new GeffeSettings());
+        }
+
+        private void cascadeTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new CascadeSettings());
+        }
+
+        private void thresholdTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new ThresholdSettings());
+        }
+
+        private void shrinkingTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new ShrinkingSettings());
+        }
+
+        private void selfdecimationTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new SelfDecimationSettings());
+        }
+
+        private void selfshrinkingTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new SelfShrinkingSettings());
+        }
+
+        private void stopandgoTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new StopAndGoSettings());
+        }
     }
 }

@@ -219,6 +219,13 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
             {
                 seriesLength= int.Parse(outputLength.Text);
             }
+            uint period = 0;
+            bool checkPeriod = false;
+            if (calculatePeriodCheckbox.IsChecked == true)
+            {
+                checkPeriod = true;
+            }
+            
 
             ClearOutput();
 
@@ -235,7 +242,16 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
                             lastGeneratedFormat = format;
                             try
                             {
-                                lastGeneratedString = new string(generator.GenerateBitsAsChars(seriesLength));
+                                if(checkPeriod)
+                                {
+                                    lastGeneratedString = new string(generator.GenerateBitsAsCharsWithPeriodCheck(seriesLength, lfsrs[0]));
+                                    period = generator.Period;
+                                }
+                                else
+                                {
+                                    lastGeneratedString = new string(generator.GenerateBitsAsChars(seriesLength));
+                                }
+                                
                             }
                             catch (Exception ex)
                             {
@@ -252,7 +268,16 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
                         {
                             try
                             {
-                                generatedBytes = generator.GenerateBytes(seriesLength);
+                                if (checkPeriod)
+                                {
+                                    generatedBytes = generator.GenerateBytesWithPeriodCheck(seriesLength,lfsrs[0]);
+                                    period = generator.Period;
+                                }
+                                else
+                                {
+                                    generatedBytes = generator.GenerateBytes(seriesLength);
+                                }
+                                    
                             }
                             catch (Exception ex)
                             {
@@ -270,7 +295,9 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
                         break;
                 }
                 UpdateRegisterState(generator);
+                setPeriodInfo(period);
                 enableButtons();
+
 
                 if (seriesLength >= 20000)
                 {
@@ -338,6 +365,13 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
                     }
                 }
 
+            });
+        }
+
+        private void setPeriodInfo(uint period)
+        {
+            Dispatcher.Invoke(() => {
+                periodTxt.Text = period.ToString();
             });
         }
 
@@ -656,6 +690,7 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
                 setPolynomial.IsEnabled = state;
                 setRegister1.IsEnabled = state;
                 outputFormatComboBox.IsEnabled = state;
+                calculatePeriodCheckbox.IsEnabled = state;
 
             });
 
@@ -672,9 +707,24 @@ namespace CryptoDesktopApplication.GeneratorsFront.LfsrGen
                 setPolynomial.IsEnabled = state;
                 setRegister1.IsEnabled = state;
                 outputFormatComboBox.IsEnabled = state;
+                calculatePeriodCheckbox.IsEnabled = state;
 
             });
         }
 
+        private void calculatePeriodCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            if (calculatePeriodCheckbox.IsChecked==true)
+            {
+                periodLabel.Visibility = Visibility.Visible;
+                periodTxt.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                periodLabel.Visibility = Visibility.Hidden;
+                periodTxt.Visibility = Visibility.Hidden;
+            }
+            
+        }
     }
 }

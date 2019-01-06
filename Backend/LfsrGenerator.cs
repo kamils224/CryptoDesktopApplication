@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace CryptoDesktopApplication.Backend
     {
 
         public Lfsr[] Registers { get; set; }
-
+        public uint Period { get; private set; }
 
         public LfsrGenerator()
         {
@@ -92,6 +93,78 @@ namespace CryptoDesktopApplication.Backend
             }
 
             return result;
+        }
+        //period check
+
+        public virtual byte[] GenerateBytesWithPeriodCheck(int length, Lfsr seed)
+        {
+            uint counter = 0;
+            uint period = 0;
+            var initialRegister = new BitArray(seed.Register);
+
+            bool[] result = new bool[length * 8];
+
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = GenerateOneBit();
+                counter++;
+
+                if (initialRegister.Equals(this.Registers[0]))
+                {
+                    period = counter;
+                }
+                this.Period = period;
+            }
+
+
+            return SeriesConverter.BoolToByteArray(result);
+        }
+        public virtual char[] GenerateBitsAsCharsWithPeriodCheck(int length,Lfsr seed)
+        {
+            uint counter = 0;
+            uint period = 0;
+            bool periodFound = false;
+            var initialRegister = new BitArray(seed.Register);
+            char[] result = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = SeriesConverter.BoolToChar(GenerateOneBit());
+                counter++;
+
+                if (CompareBitArrays(initialRegister,this.Registers[0].Register))
+                {
+                    period = counter;
+                    counter = 0;
+                    periodFound = true;
+                }
+            }
+            if (periodFound)
+            {
+                this.Period = period;
+            }
+            else
+            {
+                this.Period = counter;
+            }
+            
+            return result;
+        }
+
+        private bool CompareBitArrays(BitArray a1, BitArray a2)
+        {
+            if(a1.Length == a2.Length)
+            {
+                for (int i = 0; i < a2.Length; i++)
+                {
+                    if (a1[i] != a2[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

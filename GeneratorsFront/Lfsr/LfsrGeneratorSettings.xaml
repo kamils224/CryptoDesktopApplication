@@ -11,16 +11,16 @@
     <Grid x:Name="Settings">
         <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="LFSR - działanie" Margin="0,10,0,572"  />
         <Label FontSize="20" Content="Ustaw wartości początkowe rejestrów" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top" Width="auto"/>
-        <StackPanel Orientation="Horizontal" Margin="68,137,468,475" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="64"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr1_TextChanged" />
+        <StackPanel Orientation="Horizontal" Margin="68,137,488,475" RenderTransformOrigin="0.5,0.5">
+            <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="32"  x:Name="lfsr1" ToolTip="Znak 0 lub 1" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="700" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="lfsr1_TextChanged" />
             <Button Width="20" Height="20" Click="Clear_lfsr1"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
         </StackPanel>
         <Label FontSize="20" Content="Rejestr 1" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="68,100,0,0" VerticalAlignment="Top" Width="auto"/>
         <Label x:Name="seriesLengthLabel" FontSize="20" Content="Długość ciągu (w bitach)" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,353,0,0" VerticalAlignment="Top" Width="auto"/>
-        <StackPanel Orientation="Horizontal" Margin="300,356,802,255" RenderTransformOrigin="0.5,0.5">
-            <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="8" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 99 999 999" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="150" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
+        <StackPanel Orientation="Horizontal" Margin="314,353,788,258" RenderTransformOrigin="0.5,0.5">
+            <TextBox DataObject.Pasting="TextBoxPasting" MaxLength="9" PreviewTextInput="NumberValidationTextBox" x:Name="outputLength" ToolTip="Liczba z zakresu od 0 do 99 999 999" FontSize="20" HorizontalAlignment="Left" Height="33" MinWidth="25" Width="150" TextAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             <Button Width="20" Height="20" Click="Clear_outputLength"  Margin="1,0,0,0"  Background="Transparent" BorderBrush="Transparent"   >
                 <materialDesign:PackIcon ToolTip="Usunięcie tekstu" Margin="-16" Foreground="#FF224BB6" Kind="CloseCircle" Width="20" Height="20" VerticalAlignment="Center" />
             </Button>
@@ -38,7 +38,7 @@
             </Label.Style>
         </Label>
         <Label Content="Format generowanego ciągu" FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,316,0,0" VerticalAlignment="Top" Width="auto"/>
-        <ComboBox FontSize="20" x:Name="outputFormatComboBox" Margin="300,316,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="38" SelectionChanged="outputFormatComboBox_SelectionChanged">
+        <ComboBox FontSize="20" x:Name="outputFormatComboBox" Margin="314,315,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="38" SelectionChanged="outputFormatComboBox_SelectionChanged">
             <ComboBoxItem ToolTip="Tekst składający się z zer i jedynek"  x:Name="char_type" Content="Znaki (char)" IsSelected="True"/>
             <ComboBoxItem ToolTip="Rodzaj kodowania transportowego, kodowanie bajtów za pomocą ciągu znaków" x:Name="base64_type" Content="Base64"/>
         </ComboBox>
@@ -57,7 +57,7 @@
         <TextBox IsReadOnly="True" FontSize="20" x:Name="output" HorizontalAlignment="Left" MinHeight="110" Height="193" MaxHeight="200" Margin="30,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="918"/>
         <Button FontSize="20" x:Name="saveFileTxt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="790,316,0,0" VerticalAlignment="Top" Width="158" Height="37" Click="saveFileTxt_Click"/>
         <Button FontSize="20" x:Name="saveFileBin" Content="Zapisz (.bin)" HorizontalAlignment="Left" Margin="790,358,0,0" VerticalAlignment="Top" Width="158" Height="37" Click="saveFileBin_Click" />
-        <Button x:Name="GenerateBtn" Height="81" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="482,316,506,248" Click="GenerateBtn_Click" >
+        <Button x:Name="GenerateBtn" Height="74" HorizontalContentAlignment="Center" VerticalAlignment="Center" Margin="497,316,506,255" Click="GenerateBtn_Click" >
             <TextBlock TextAlignment="Center" FontSize="30" Text="Generuj ciąg" TextWrapping="Wrap" />
         </Button>
         <control:LoadingAnimation Visibility="Collapsed" x:Name="LoadingCircle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="84" Margin="450,477,728,84" Width="102"/>
@@ -77,8 +77,8 @@
                 </Style>
             </Label.Style>
         </Label>
-        <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,136,0,0" VerticalAlignment="Top" Width="157" Height="39" Click="setRegister1_Click" ></Button>
-        <DataGrid CanUserAddRows="False" DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="288" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
+        <Button FontSize="20" x:Name="setRegister1" Content="Ustaw rejestr" HorizontalAlignment="Left" Margin="797,135,0,0" VerticalAlignment="Top" Width="157" Height="39" Click="setRegister1_Click" ></Button>
+        <DataGrid Background="White" CanUserAddRows="False" DataObject.Pasting="PolynomialDataGrid_Pasting" CellEditEnding="DatagridValidation" AutoGenerateColumns="False"  ItemsSource="{Binding}" x:Name="PolynomialDataGrid" HorizontalAlignment="Left" Height="288" Margin="959,137,0,0" VerticalAlignment="Top" Width="301">
             <DataGrid.Columns>
                 <DataGridTextColumn IsReadOnly="True" Width="100" Header="Długość" Binding="{Binding Length}" />
                 <DataGridTextColumn Width="*" Header="Wielomian" Binding="{Binding Polynomial}" />
@@ -109,5 +109,32 @@
                 </Style>
             </Label.Style>
         </Label>
+        <CheckBox x:Name="calculatePeriodCheckbox" Margin="156,234,1086,375" RenderTransformOrigin="0.342,0.181" Unchecked="calculatePeriodCheckbox_Checked" Checked="calculatePeriodCheckbox_Checked">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.286"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.061"/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <Label ToolTip="Generuje ciąg wraz z informacją o okresie, ale spowalnia generowanie bitów" Content="Oblicz okres" FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,230,0,0" VerticalAlignment="Top" Width="126">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Background" Value="Transparent" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightGray" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
+        <TextBlock Visibility="Hidden" x:Name="periodTxt" TextAlignment="Center" Background="LightGray" Text="0" FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="460" Margin="314,277,0,0"/>
+        <Label Visibility="Hidden" x:Name="periodLabel" Content="Okres wygenerowanego ciągu" FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,272,0,0" VerticalAlignment="Top" Width="auto"/>
     </Grid>
 </UserControl>
