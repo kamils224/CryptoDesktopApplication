@@ -62,9 +62,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers.cs" />
-    <Compile Include="StreamCipher\Encryptor.xaml.cs">
-      <DependentUpon>Encryptor.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StreamCipher\StreamCipherUserControl.xaml.cs">
       <DependentUpon>StreamCipherUserControl.xaml</DependentUpon>
     </Compile>
@@ -240,10 +237,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="StreamCipher\Encryptor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="StreamCipher\StreamCipherUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
