@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="CryptoDesktopApplication.GeneratorsFront.Geffe.GeffeDescription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:CryptoDesktopApplication.GeneratorsFront.Geffe"
+             mc:Ignorable="d" 
+             Height="645" Width="1280" Background="White">
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="GridGeffego" Width="1280">
+        <StackPanel HorizontalAlignment="Center" x:Name="StackGrid" Margin="0,10,0,0" Width="1280">
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
+                GENERATOR GEFFEGO
+            </Label>
+            <Label Margin="60,10,60,0" FontSize="20" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Zaproponowany w 1973 r. przez P.R. Geffego. Wykorzystuje trzy rejestry
+LFSR powiązane ze sobą nieliniowo przez multiplekser. Działanie tego generatora można opisać wzorem:"/>
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/wz_geffego.PNG" Height="40" Width="682" Margin="293,0,305,0" />
+            <Label Margin="60,0" FontSize="20" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="   Liniowa złozonosc tego generatora wynosi (L1 + 1)L2 + L1L3 gdzie Li oznacza
+długość rejestru i. Okres tego ciagu wyjściowego z generatora odpowiada najmniejszej wspólnej wielokrotności trzech okresów generatorów składowych. W najlepszym
+przypadku jest on równy iloczynowi okresów generatorów składowych T = T1T2T3
+pod warunkiem, ze długości rejestrów składowych są wzglednie pierwsze." />
+            </Label>
+            <Image  Margin="269,0,281,0" HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/gen_geffego.PNG" Height="312" Width="682" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -42,3 +42,17 @@ C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Cascade\CascadeSettings.baml
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Lfsr\LfsrGeneratorSettings.g.cs
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Lfsr\LfsrGeneratorSettings.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Geffe\GeffeDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Geffe\GeffeDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Cascade\CascadeDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\SelfDecimation\SelfDecimationDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\SelfShrinking\SelfShrinkingDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Shrinking\ShrinkingDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\StopAndGo\StopAndGoDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Threshold\ThresholdDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Cascade\CascadeDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\SelfDecimation\SelfDecimationDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\SelfShrinking\SelfShrinkingDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Shrinking\ShrinkingDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\StopAndGo\StopAndGoDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Threshold\ThresholdDescription.baml

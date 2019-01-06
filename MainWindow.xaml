@@ -20,14 +20,14 @@
                             <MenuItem Header="_Autorzy"/>
                         </MenuItem>
                         <MenuItem x:Name="Generators_description" Header="_Generatory - opis">
-                            <MenuItem Header="_Rejestr LFSR"/>
-                            <MenuItem Header="_Generator Geffego"/>
-                            <MenuItem Header="_Kaskada Gollmana"/>
-                            <MenuItem Header="_Generator progowy"/>
-                            <MenuItem Header="_Generator rozrzedzający"/>
-                            <MenuItem Header="_Generator samodecymujący"/>
-                            <MenuItem Header="_Generator samorozrzedzający"/>
-                            <MenuItem Header="_Generator stop &amp; go"/>
+                            <MenuItem x:Name="lfsrDesTab" Header="_Rejestr LFSR"/>
+                            <MenuItem x:Name="geffeDesTab" Header="_Generator Geffego" Click="geffeDesTab_Click"/>
+                            <MenuItem x:Name="cascadeDesTab" Header="_Kaskada Gollmana" Click="cascadeDesTab_Click"/>
+                            <MenuItem x:Name="thresholdDesTab" Header="_Generator progowy" Click="thresholdDesTab_Click"/>
+                            <MenuItem x:Name="shrinkingDesTab" Header="_Generator obcinający" Click="shrinkingDesTab_Click"/>
+                            <MenuItem x:Name="selfdecimationDesTab" Header="_Generator samodecymujący" Click="selfdecimationDesTab_Click"/>
+                            <MenuItem x:Name="selfshrinkingDesTab" Header="_Generator samoobcinający" Click="selfshrinkingDesTab_Click"/>
+                            <MenuItem x:Name="stopandgoDesTab" Header="_Generator stop &amp; go" Click="stopandgoDesTab_Click"/>
                         </MenuItem>
                         <MenuItem x:Name="Generators_application" Header="_Generatory - działanie">
                             <MenuItem x:Name="lfsrTab" Header="_Rejestr LFSR" Click="lfsrTab_Click"/>

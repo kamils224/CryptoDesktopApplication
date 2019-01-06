@@ -82,5 +82,48 @@ namespace CryptoDesktopApplication
             MainContainer.Children.Clear();
             MainContainer.Children.Add(new StopAndGoSettings());
         }
+
+        //descriptions
+        private void geffeDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new GeffeDescription());
+        }
+
+        private void cascadeDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new CascadeDescription());
+        }
+
+        private void thresholdDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new ThresholdDescription());
+        }
+
+        private void shrinkingDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new ShrinkingDescription());
+        }
+
+        private void selfdecimationDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new SelfDecimationDescription());
+        }
+
+        private void selfshrinkingDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new SelfShrinkingDescription());
+        }
+
+        private void stopandgoDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new StopAndGoDescription());
+        }
     }
 }

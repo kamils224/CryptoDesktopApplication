@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\App.xaml
-12-564332882
+19-622686843
 
-33891597227
+401825804260
 15884686890
-GeneratorsFront\Cascade\CascadeSettings.xaml;GeneratorsFront\Geffe\GeffeSettings.xaml;GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml;GeneratorsFront\RegisterUserControl.xaml;GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml;GeneratorsFront\Shrinking\ShrinkingSettings.xaml;GeneratorsFront\StopAndGo\StopAndGoSettings.xaml;GeneratorsFront\Threshold\ThresholdSettings.xaml;LoadingControl\Block.xaml;LoadingControl\LoadingAnimation.xaml;MainWindow.xaml;
+GeneratorsFront\Cascade\CascadeSettings.xaml;GeneratorsFront\Cascade\CascadeDescription.xaml;GeneratorsFront\Geffe\GeffeSettings.xaml;GeneratorsFront\Geffe\GeffeDescription.xaml;GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml;GeneratorsFront\RegisterUserControl.xaml;GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml;GeneratorsFront\SelfDecimation\SelfDecimationDescription.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingDescription.xaml;GeneratorsFront\Shrinking\ShrinkingSettings.xaml;GeneratorsFront\Shrinking\ShrinkingDescription.xaml;GeneratorsFront\StopAndGo\StopAndGoSettings.xaml;GeneratorsFront\StopAndGo\StopAndGoDescription.xaml;GeneratorsFront\Threshold\ThresholdSettings.xaml;GeneratorsFront\Threshold\ThresholdDescription.xaml;LoadingControl\Block.xaml;LoadingControl\LoadingAnimation.xaml;MainWindow.xaml;
 
 True
 

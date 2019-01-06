@@ -65,9 +65,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="GeneratorsFront\Cascade\CascadeDescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\Geffe\GeffeSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GeneratorsFront\Geffe\GeffeDescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -81,7 +89,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="GeneratorsFront\SelfDecimation\SelfDecimationDescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneratorsFront\SelfShrinking\SelfShrinkingDescription.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -89,11 +105,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="GeneratorsFront\Shrinking\ShrinkingDescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\StopAndGo\StopAndGoSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="GeneratorsFront\StopAndGo\StopAndGoDescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\Threshold\ThresholdSettings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneratorsFront\Threshold\ThresholdDescription.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -128,8 +156,14 @@
     <Compile Include="GeneratorsFront\Cascade\CascadeSettings.xaml.cs">
       <DependentUpon>CascadeSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorsFront\Cascade\CascadeDescription.xaml.cs">
+      <DependentUpon>CascadeDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\Geffe\GeffeSettings.xaml.cs">
       <DependentUpon>GeffeSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\Geffe\GeffeDescription.xaml.cs">
+      <DependentUpon>GeffeDescription.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml.cs">
       <DependentUpon>LfsrGeneratorSettings.xaml</DependentUpon>
@@ -140,18 +174,33 @@
     <Compile Include="GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml.cs">
       <DependentUpon>SelfDecimationSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorsFront\SelfDecimation\SelfDecimationDescription.xaml.cs">
+      <DependentUpon>SelfDecimationDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml.cs">
       <DependentUpon>SelfShrinkingSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\SelfShrinking\SelfShrinkingDescription.xaml.cs">
+      <DependentUpon>SelfShrinkingDescription.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\Shrinking\ShrinkingSettings.xaml.cs">
       <DependentUpon>ShrinkingSettings.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\PolynomialModel.cs" />
+    <Compile Include="GeneratorsFront\Shrinking\ShrinkingDescription.xaml.cs">
+      <DependentUpon>ShrinkingDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\StopAndGo\StopAndGoSettings.xaml.cs">
       <DependentUpon>StopAndGoSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneratorsFront\StopAndGo\StopAndGoDescription.xaml.cs">
+      <DependentUpon>StopAndGoDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\Threshold\ThresholdSettings.xaml.cs">
       <DependentUpon>ThresholdSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\Threshold\ThresholdDescription.xaml.cs">
+      <DependentUpon>ThresholdDescription.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoadingControl\Block.xaml.cs">
       <DependentUpon>Block.xaml</DependentUpon>
