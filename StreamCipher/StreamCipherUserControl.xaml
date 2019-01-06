@@ -11,8 +11,8 @@
     <Grid Background="white">
         <TextBox FontSize="20" x:Name="inputEncrypt" HorizontalAlignment="Left" MaxHeight="215" Height="100" Margin="766,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" />
         <Button FontSize="20" x:Name="loadKeyBtn" Content="Wczytaj klucz" HorizontalAlignment="Left" Margin="766,68,0,0" VerticalAlignment="Top" Width="171" Height="58" Click="loadKeyBtn_Click" />
-        <CheckBox ToolTip="Plik zawierający znaki 0 lub 1, które symulują pojedynczy bit" FontSize="20" IsChecked="True" x:Name="txtFile" Foreground="#FF224BB6" Content="z pliku tekstowego (.txt)" HorizontalAlignment="Left" Margin="948,68,0,0" VerticalAlignment="Top" Checked="txtFile_Checked" />
-        <CheckBox ToolTip="Dowolny plik binarny" FontSize="20" x:Name="binFile" Foreground="#FF224BB6" Content="z pliku binarnego (.bin)" HorizontalAlignment="Left" Margin="948,96,0,0" VerticalAlignment="Top" Width="232" Checked="binFile_Checked"/>
+        <CheckBox ToolTip="Plik zawierający znaki 0 lub 1, które symulują pojedynczy bit" FontSize="20" x:Name="txtFile" Foreground="#FF224BB6" Content="z pliku tekstowego (.txt)" HorizontalAlignment="Left" Margin="948,68,0,0" VerticalAlignment="Top" Checked="txtFile_Checked" />
+        <CheckBox ToolTip="Dowolny plik binarny" FontSize="20" x:Name="binFile" Foreground="#FF224BB6" IsChecked="True" Content="z pliku binarnego (.bin)" HorizontalAlignment="Left" Margin="948,96,0,0" VerticalAlignment="Top" Width="232" Checked="binFile_Checked"/>
 
         <TextBlock  Foreground="#FF224BB6" FontSize="20" Text="Wejście" Margin="766,220,289,391"/>
         <TextBox IsReadOnly="True" FontSize="20" x:Name="outputEncrypt" HorizontalAlignment="Left" MaxHeight="215" Height="100" Margin="766,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" />
@@ -21,7 +21,7 @@
         <Button x:Name="loadFileEncrypt" Content="Wczytaj plik" HorizontalAlignment="Left" Margin="766,508,0,0" VerticalAlignment="Top" Width="129" Height="36" />
         <Button x:Name="encryptFileBtn" Content="Szyfruj plik" HorizontalAlignment="Left" Margin="906,508,0,0" VerticalAlignment="Top" Width="129" Height="36" />
         <Button Background="Green" x:Name="saveEncryptedFile" Content="Zaszyfrowany plik" HorizontalAlignment="Left" Margin="766,586,0,0" VerticalAlignment="Top" Width="269" Height="28" />
-        <Button x:Name="encryptBtn_Copy1" Content="Szyfruj tekst" HorizontalAlignment="Left" Margin="843,364,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="encryptBtn_Copy1_Click" />
+        <Button x:Name="encryptBtn" Content="Szyfruj tekst" HorizontalAlignment="Left" Margin="843,364,0,0" VerticalAlignment="Top" Width="129" Height="34" Click="encryptBtn_Click" />
         <control:LoadingAnimation Visibility="Collapsed" x:Name="LoadingCircle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="82" Margin="1144,522,37,41" Width="99"/>
         <TextBlock x:Name="fileInfo"  Foreground="#FF224BB6" FontSize="20" Text="file info" Margin="766,552,429,59"/>
         <Grid x:Name="inputFormat" Margin="820,181,34,387">
@@ -40,19 +40,19 @@
         </Grid>
 
         <materialDesign:PackIcon ToolTip="W normalnym zastosowaniu klucz jest generowany podczas szyfrowania, jednak dla potrzeb edukacyjnych wczytuje się go z pliku" x:Name="seriesTest" Margin="1189,68,0,520" Foreground="#FF2196F3" Kind="Information" Width="81" Height="57" VerticalAlignment="Center" />
-        <TextBlock FontSize="35" Foreground="#FF224BB6" FontWeight="Bold" Text="Szyfr strumieniowy" Margin="493,10,412,582"/>
+        <TextBlock FontSize="35" Foreground="#FF224BB6" FontWeight="Bold" Text="Szyfr strumieniowy" Margin="493,0,412,582"/>
         <TextBlock x:Name="keyFileInfo" Foreground="#FF224BB6" FontSize="12" Margin="766,150,10,476"/>
         <Grid x:Name="outputFormat" Margin="820,327,34,241">
-            <RadioButton DataContext="ascii" GroupName="outputFormat" IsChecked="True" Margin="163,46,208,0" >
+            <RadioButton Checked="ChangeOutputToAscii" DataContext="ascii" GroupName="outputFormat" IsChecked="True" Margin="163,46,208,0" >
                 <TextBlock Text="ASCII" Foreground="#FF224BB6"/>
             </RadioButton>
-            <RadioButton DataContext="hex" GroupName="outputFormat" Margin="223,46,152,4" >
+            <RadioButton Checked="ChangeOutputToHex" DataContext="hex" GroupName="outputFormat" Margin="223,46,152,4" >
                 <TextBlock Text="Hex" Foreground="#FF224BB6"/>
             </RadioButton>
-            <RadioButton DataContext="base64" GroupName="outputFormat" Margin="279,46,82,2" >
+            <RadioButton Checked="ChangeOutputToBase64" DataContext="base64" GroupName="outputFormat" Margin="279,46,82,2" >
                 <TextBlock Text="Base64" Foreground="#FF224BB6" Width="48"/>
             </RadioButton>
-            <RadioButton DataContext="unicode" GroupName="outputFormat" Margin="349,46,0,4" >
+            <RadioButton Checked="ChangeOutputToUnicode" DataContext="unicode" GroupName="outputFormat" Margin="349,46,0,4" >
                 <TextBlock Text="Unicode" Foreground="#FF224BB6"/>
             </RadioButton>
         </Grid>

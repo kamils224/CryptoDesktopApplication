@@ -28,7 +28,7 @@ namespace CryptoDesktopApplication.StreamCipher
             BIN
         }
 
-        private readonly string hexPattern = "^([a-fA-F0-9]{2}\\s+)+";
+        private readonly string hexPattern = @"^[A-Fa-f0-9]*$";
 
         private byte[] loadedKey;
         private string loadedKeyTxt;
@@ -113,8 +113,13 @@ namespace CryptoDesktopApplication.StreamCipher
                 txtFile.IsChecked = false;
         }
 
-        private void encryptBtn_Copy1_Click(object sender, RoutedEventArgs e)
+        private void encryptBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(inputEncrypt.Text))
+            {
+                return;
+            }
+
             if (keyformat == KeyType.NONE)
             {
                 return;
@@ -128,6 +133,8 @@ namespace CryptoDesktopApplication.StreamCipher
 
             Task.Run(() => {
 
+                disableAllButtons();
+                showLoadingCircle();
                 switch (format)
                 {
                     case "ascii":
@@ -143,6 +150,8 @@ namespace CryptoDesktopApplication.StreamCipher
                             {
                                 Dispatcher.Invoke(() =>
                                 {
+                                    hideLoadingCircle();
+                                    enableAllbuttons();
                                     MessageBox.Show("Podano niepoprawny tekst dla formatu hex!");
                                 });
 
@@ -156,6 +165,8 @@ namespace CryptoDesktopApplication.StreamCipher
                             {
                                 Dispatcher.Invoke(() =>
                                 {
+                                    hideLoadingCircle();
+                                    enableAllbuttons();
                                     MessageBox.Show(ex.Message); 
                                 });
                                 return;
@@ -175,6 +186,8 @@ namespace CryptoDesktopApplication.StreamCipher
                             {
                                 Dispatcher.Invoke(() =>
                                 {
+                                    hideLoadingCircle();
+                                    enableAllbuttons();
                                     MessageBox.Show("niepoprawny format Base64!");
                                 });
                                 return;
@@ -191,7 +204,16 @@ namespace CryptoDesktopApplication.StreamCipher
                     default:
                         break;
                 }
-                
+
+                hideLoadingCircle();
+                enableAllbuttons();
+
+                asciiOutput = null;
+                hexOutput = null;
+                base64Output = null;
+                unicodeOutput = null;
+                WriteToOutputTextbox(output);
+
             });
         }
 
@@ -226,24 +248,28 @@ namespace CryptoDesktopApplication.StreamCipher
                 {
                     case "ascii":
                         {
-                            outputEncrypt.Text = Encoding.ASCII.GetString(encrypted);
+                            asciiOutput = Encoding.ASCII.GetString(encrypted);
+                            outputEncrypt.Text = asciiOutput;
                             break;
                         }
                     case "hex":
                         {
-                            var hex = BitConverter.ToString(encrypted, 16).Replace("-", string.Empty);
-                            outputEncrypt.Text = hex;
+                            var hex = BitConverter.ToString(encrypted).Replace("-", string.Empty);
+                            hexOutput = hex;
+                            outputEncrypt.Text = hexOutput;
 
                             break;
                         }
                     case "base64":
                         {
-                            outputEncrypt.Text = Convert.ToBase64String(encrypted);
+                            base64Output = Convert.ToBase64String(encrypted);
+                            outputEncrypt.Text = base64Output;
                             break;
                         }
                     case "unicode":
                         {
-                            outputEncrypt.Text = Encoding.Unicode.GetString(encrypted);
+                            unicodeOutput = Encoding.Unicode.GetString(encrypted);
+                            outputEncrypt.Text = unicodeOutput;
                             break;
                         }
                     default:
@@ -252,5 +278,137 @@ namespace CryptoDesktopApplication.StreamCipher
 
             });
         }
+
+        private string asciiOutput = null;
+        private string hexOutput = null;
+        private string base64Output = null;
+        private string unicodeOutput = null;
+
+        private void ChangeOutputToAscii(object sender, RoutedEventArgs e)
+        {
+            if (output != null)
+            {
+                if (asciiOutput == null)
+                {
+                    asciiOutput = Encoding.ASCII.GetString(output);
+                    outputEncrypt.Text = asciiOutput;
+                }
+                else
+                {
+                    outputEncrypt.Text = asciiOutput;
+                }
+            }
+            
+        }
+        private void ChangeOutputToHex(object sender, RoutedEventArgs e)
+        {
+            if (output != null)
+            {
+                if (hexOutput == null)
+                {
+                    var hex = BitConverter.ToString(output).Replace("-", string.Empty);
+                    hexOutput = hex;
+                    outputEncrypt.Text = hexOutput;
+                }
+                else
+                {
+                    outputEncrypt.Text = hexOutput;
+                }
+                    
+                
+            }
+
+        }
+        private void ChangeOutputToBase64(object sender, RoutedEventArgs e)
+        {
+            if (output != null)
+            {
+                if (base64Output == null)
+                {
+                    base64Output = Convert.ToBase64String(output);
+                    outputEncrypt.Text = base64Output;
+                }
+                else
+                {
+                    outputEncrypt.Text = base64Output;
+                }                   
+            }
+            
+        }
+        private void ChangeOutputToUnicode(object sender, RoutedEventArgs e)
+        {
+            if (output != null)
+            {
+                if (unicodeOutput == null)
+                {
+                    unicodeOutput = Encoding.Unicode.GetString(output);
+                    outputEncrypt.Text = unicodeOutput;
+                }
+                else
+                {
+                    outputEncrypt.Text = unicodeOutput;
+                }
+
+            }
+            
+        }
+
+        private void showLoadingCircle()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                LoadingCircle.Visibility = Visibility.Visible;
+            });
+        }
+
+        private void hideLoadingCircle()
+        {
+            Dispatcher.Invoke(() =>
+            {
+                LoadingCircle.Visibility = Visibility.Collapsed;
+            });
+        }
+
+        private void disableAllButtons()
+        {
+            bool state = false;
+            Dispatcher.Invoke(() =>
+            {
+                loadKeyBtn.IsEnabled = state;
+                encryptBtn.IsEnabled = state;
+                encryptFileBtn.IsEnabled = state;
+                loadFileEncrypt.IsEnabled = state;
+                foreach (RadioButton item in inputFormat.Children)
+                {
+                    item.IsEnabled = state;
+                }
+                foreach (RadioButton item in outputFormat.Children)
+                {
+                    item.IsEnabled = state;
+                }
+
+
+            });
+        }
+        private void enableAllbuttons()
+        {
+            bool state = true;
+            Dispatcher.Invoke(() =>
+            {
+                loadKeyBtn.IsEnabled = state;
+                encryptBtn.IsEnabled = state;
+                encryptFileBtn.IsEnabled = state;
+                loadFileEncrypt.IsEnabled = state;
+                foreach (RadioButton item in inputFormat.Children)
+                {
+                    item.IsEnabled = state;
+                }
+                foreach (RadioButton item in outputFormat.Children)
+                {
+                    item.IsEnabled = state;
+                }
+            });
+        }
+
     }
 }
