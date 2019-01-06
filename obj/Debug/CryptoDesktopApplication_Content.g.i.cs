@@ -8,26 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_geffego.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_gollmana.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_obcinajacy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_progowy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_rozrzedzajacy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_rueppela.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_samoobcinajacy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gen_stop_and_go.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logo1.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/p1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/p2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wzor_rozrzedzajacy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_geffego.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_gollmana.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_gollmana2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_obcinajacy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_progowy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_rozrzedzajacy.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_rueppela.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wz_stop_and_go.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pokerformula.png")]
 
 

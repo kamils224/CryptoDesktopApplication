@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="CryptoDesktopApplication.GeneratorsFront.LfsrGen.LfsrGeneratorDescription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:CryptoDesktopApplication.GeneratorsFront.LfsrGen"
+               mc:Ignorable="d" 
+             Height="645" Width="1280" Background="White">
+
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+
+    <Grid x:Name="GridGollmana">
+        <StackPanel HorizontalAlignment="Center" x:Name="StackGrid">
+
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" Content="Rejestr przesuwający z liniowym sprzężeniem zwrotnym" />
+            <Label Margin="55,8,55,0" FontSize="20" Foreground="#FF224BB6" Width="1140">
+                <TextBlock TextWrapping="WrapWithOverflow">
+                    
+    <Run Text="    "></Run>Liniowy n-stopniowy rejestr przesuwający LFSR składa się z <Italic>n</Italic> przerzutników oraz liniowej funkcji sprzężenia zwrotnego f(<Italic>x</Italic><Run Typography.Variants="Subscript" Text="0"></Run>,<Italic>x</Italic><Run Typography.Variants="Subscript" Text="1"></Run>,...,<Italic>x</Italic><Run Typography.Variants="Subscript" Text="&#x2099;&#x208B;&#x2081;"></Run>). Przerzutniki są komórkami pamięci reprezentującymi jedną cyfrę dwójkową. W każdym kroku element x<Run Typography.Variants="Subscript"></Run>&#x2096; znajdujący się w komórce o numerze <Italic>k</Italic> przesuwany jest w lewo do komórki o numerze <Italic>k-1</Italic> dla <Italic>k=2,3,4,...,n-1</Italic>. Natomiast w komórce <Italic>n-1</Italic> umieszczana jest wartość funkcji sprzężenia zwrotnego f(<Italic>x</Italic><Run Typography.Variants="Subscript" Text="0"></Run>,<Italic>x</Italic><Run Typography.Variants="Subscript" Text="1"></Run>,...,<Italic>x</Italic><Run Typography.Variants="Subscript" Text="&#x2099;&#x208B;&#x2081;"></Run>) wyznaczona w poprzednim kroku. Schemat działania rejestru został pokazany na poniższym rysunku. Ziarnem nazywamy stan <Italic>n</Italic> bitów <Italic>x</Italic><Run Typography.Variants="Subscript" Text="0"></Run>,<Italic>x</Italic><Run Typography.Variants="Subscript" Text="1"></Run>,...,<Italic>x</Italic><Run Typography.Variants="Subscript" Text="&#x2099;&#x208B;&#x2081;"></Run>, z którego rejestr rozpoczyna pracę. Dla <Italic>n</Italic>-stopniowego rejestru przesuwającego, maksymalny okres ciągu jaki może być wygenerowany wynosi: T = 2&#x207F;-1.
+                </TextBlock>
+            </Label>
+            <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/CryptoDesktopApplication;component/Images/lfsr.jpg" Height="251" Width="612" />
+            <Label Margin="55,0" FontSize="20" Foreground="#FF224BB6">
+                <TextBlock TextWrapping="WrapWithOverflow" Text="Liniowa funkcja sprzężenia zwrotnego wykonuje działania XOR na kilku bitach stanu. Wybór bitów, które są poddawane operacji XOR decyduje o tym czy uda się osiągnąć maksymalny okres. Okres jest maksymalny wtedy i tylko wtedy gdy wielomian jest pierwotny. Przykładowy wielomian 1+x&#x00B2;+x&#x2074;+x&#x2075; oznacza, że bity na pozycjach 2, 4 i 5 są poddawane operacji XOR." />
+            </Label>
+        </StackPanel>
+    </Grid>
+</UserControl>

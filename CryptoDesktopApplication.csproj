@@ -61,6 +61,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="StreamCipher\Encryptor.xaml.cs">
+      <DependentUpon>Encryptor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StreamCipher\StreamCipherUserControl.xaml.cs">
+      <DependentUpon>StreamCipherUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Fips\FipsDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fips\FipsTestsUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GeneratorsFront\Cascade\CascadeSettings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GeneratorsFront\Geffe\GeffeDescription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneratorsFront\Lfsr\LfsrGeneratorDescription.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -152,7 +171,13 @@
     <Compile Include="Backend\ShrinkingGenerator.cs" />
     <Compile Include="Backend\StopAndGoGenerator.cs" />
     <Compile Include="Backend\ThresholdGenerator.cs" />
+    <Compile Include="Fips\FipsDescription.xaml.cs">
+      <DependentUpon>FipsDescription.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Fips\FipsTests.cs" />
+    <Compile Include="Fips\FipsTestsUserControl.xaml.cs">
+      <DependentUpon>FipsTestsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GeneratorsFront\Cascade\CascadeSettings.xaml.cs">
       <DependentUpon>CascadeSettings.xaml</DependentUpon>
     </Compile>
@@ -164,6 +189,9 @@
     </Compile>
     <Compile Include="GeneratorsFront\Geffe\GeffeDescription.xaml.cs">
       <DependentUpon>GeffeDescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratorsFront\Lfsr\LfsrGeneratorDescription.xaml.cs">
+      <DependentUpon>LfsrGeneratorDescription.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml.cs">
       <DependentUpon>LfsrGeneratorSettings.xaml</DependentUpon>
@@ -212,6 +240,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StreamCipher\Encryptor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StreamCipher\StreamCipherUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -263,6 +299,14 @@
     <Resource Include="Images\wz_rueppela.PNG" />
     <Resource Include="Images\wz_stop_and_go.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\lfsr.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fipsTable.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pokerFormula.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

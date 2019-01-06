@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="PZ_generatory.Encryptor"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:PZ_generatory"
+             mc:Ignorable="d" 
+             Height="Auto" Width="Auto" Background="White">
+    <UserControl.Resources>
+        <materialDesign:PackIcon x:Key="ArrowLeft" Kind="ArrowLeft" Foreground="White" Width="40" Height="40"/>
+    </UserControl.Resources>
+    
+    <Grid x:Name="Encrypt">
+        <Grid Margin="20,20,20,0">
+            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  >
+                Szyfrator strumieniowy
+            </Label>
+        </Grid>
+        <StackPanel>
+            <WrapPanel>
+                <StackPanel Name="Left" >
+                    <Label Content="Ciąg pseudolosowy " Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top" Width="188"/>
+                    <WrapPanel>
+                        <Button x:Name="wczytaj_ciag" Content="Wczytaj" HorizontalAlignment="Left" Margin="38,2,0,0" VerticalAlignment="Top" Width="101" Height="39" Click="Button_Click_2" />
+                        <StackPanel Margin="10,0,0,0">
+                            <CheckBox x:Name="txt" Foreground="#FF224BB6" Content="z pliku tekstowego (.txt)" HorizontalAlignment="Left" Margin="0,1,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+                            <CheckBox x:Name="bin" Foreground="#FF224BB6" Content="z pliku binarnego (.bin)" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Checked="bin_Checked"/>
+                        </StackPanel>
+                    </WrapPanel>
+                    <Label Content="Tekst do zaszyfrowania" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,20,0,0" VerticalAlignment="Top" Width="173"/>
+                    <TextBox x:Name="tekst" HorizontalAlignment="Left" MaxHeight="215" Height="auto" Margin="30,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" />
+                    <Button x:Name="wczytaj_tekst" Content="Wczytaj" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Width="97" Height="31" Click="Button_Click_5" />
+                    <Button x:Name="zapisz_tekst" Content="Zapisz" HorizontalAlignment="Left" Margin="142,-31,0,0" VerticalAlignment="Top" Width="97" Height="31" Click="Button_Click_9" />
+                </StackPanel>
+
+                <StackPanel Name="Right">
+                    <Label Content="Wygenerowany szyfrogram:" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="wynik" HorizontalAlignment="Left" MinHeight="110" Height="auto" MaxHeight="270" Margin="30,2,30,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380"/>
+                    <Button x:Name="wynik_txt" Content="Zapisz (.txt)" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Width="115" Height="31" Click="wynik_txt_Click" />
+                    <Button x:Name="wynik_bin" Content="Zapisz (.bin)" HorizontalAlignment="Left"  Margin="160,-31,0,0"  VerticalAlignment="Top"  Width="115" Height="31" Click="wynik_bin_Click"/>
+                </StackPanel>
+            </WrapPanel>
+            <Grid Margin="0,20">
+                <StackPanel HorizontalAlignment="Left" Margin="50,0">
+                    <Button x:Name="buttonBackToCAtegoryChoice" Height="50"  Click="BackTo_Click" HorizontalContentAlignment="Center">
+                        <DynamicResource ResourceKey="ArrowLeft"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Center" Margin="50,0">
+                    <Button Height="50" Width="500" HorizontalContentAlignment="Center" VerticalAlignment="Center" Click="Button_Click">
+                        <TextBlock TextAlignment="Center" FontSize="25" Text="Szyfruj" TextWrapping="Wrap" />
+                    </Button>
+                </StackPanel>
+            </Grid>
+            
+            
+        </StackPanel>
+    </Grid>
+</UserControl>

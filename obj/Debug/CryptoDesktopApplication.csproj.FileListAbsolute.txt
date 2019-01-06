@@ -56,3 +56,13 @@ C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Shrinking\ShrinkingDescription.baml
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\StopAndGo\StopAndGoDescription.baml
 C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Threshold\ThresholdDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Lfsr\LfsrGeneratorDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\GeneratorsFront\Lfsr\LfsrGeneratorDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\Fips\FipsTestsUserControl.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\Fips\FipsTestsUserControl.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\Fips\FipsDescription.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\Fips\FipsDescription.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\StreamCipher\Encryptor.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\StreamCipher\StreamCipherUserControl.g.cs
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\StreamCipher\Encryptor.baml
+C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\StreamCipher\StreamCipherUserControl.baml

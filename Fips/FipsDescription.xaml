@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="CryptoDesktopApplication.Fips.FipsDescription"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptoDesktopApplication.Fips"
+             mc:Ignorable="d"
+             Height="645" Width="1280" Background="White">
+    <Grid>
+        <Label FontWeight="Bold" FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="-10,0,0,594" >
+            TESTY FIPS 140-2
+        </Label>
+        <TextBlock Foreground="#FF224BB6" FontSize="20" HorizontalAlignment="Left" Margin="63,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Text=" W standardzie FIPS 140-2 rekomenduje się 4 testy statystyczne badania losowości ciągu. W każdym teście przyjmuje się, że badana próbka ma długość 20 000 bitów." Width="1102" />
+        <TextBlock FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="63,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="739"><Run Text="Liczba n jedynek w badanym ciągu powinna spełniać warunek: 9725 &lt; n &lt; 10 275"/><Run Text="."/><LineBreak/><Run Text=""/></TextBlock>
+        <TextBlock FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="63,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="109" Width="892">Seria - maksymalny podciąg następujących po sobie zer albo jedynek. Dla próbki należy wyznaczyć liczbę wystąpień serii o długości n&gt;1 dla zer i dla jedynek osobno. Test zakończy się sukcesem, jeśli liczba seri o długości 1 do 6 (serie o długości większej niż 6 są traktowane jako serie o długości 6) mieści się w przedziałach wyspecyfikowanych w tabeli obok.</TextBlock>
+        <Image HorizontalAlignment="Left" Height="293" Margin="988,93,0,0" VerticalAlignment="Top" Width="267" Source="/Images/fipsTable.jpg"/>
+        <TextBlock FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="63,475,0,0" Width="1192"><Run Text="Badaną próbkę dzielimy na 5000 segmentów 4-bitowych. Następnie liczymy ilość wystąpień każdej z 16 możliwych 4-bitowych wartości. Niech s(i), 0 &lt;"/><Run Text="="/><Run Text=" "/><Run Text="i "/><Run Text=" &lt;"/><Run Text="="/><Run Text="15, oznacza liczbę wystąpień swgmentów o wartości i. "/><LineBreak/><Run Text="Wówczas: "/></TextBlock>
+        <Image HorizontalAlignment="Left" Height="57"  VerticalAlignment="Top" Width="315" Source="/Images/pokerFormula.PNG" Margin="63,560,0,0"/>
+        <TextBlock FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="535" Margin="407,574,0,0" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.164"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Test zakończy si"/><Run Text="ę sukcesem, jeśli 2,16 &lt; X &lt; 46,17."/><Run Text=" "/></TextBlock>
+        <Label FontWeight="Bold" FontSize="30" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="26,109,362,480" Content="Test pojedynczych bitów" />
+        <Label FontWeight="Bold" FontSize="30" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="26,189,357,405" Content="Test serii" />
+        <Label FontWeight="Bold" FontSize="30" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="26,349,357,240" Content="Test długiej serii" />
+        <TextBlock FontSize="20" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="63,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="1192"><Run Text="Długa seria"/><Run Text=" "/><Run Text="- seria zer albo jedynek o długości 26 lub więcej. Test zakończy się sukcesem, jeśli w próbce nie ma długiej serii."/></TextBlock>
+        <Label FontWeight="Bold" FontSize="30" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="26,424,357,170" Content="Test pokerowy" />
+
+    </Grid>
+</UserControl>

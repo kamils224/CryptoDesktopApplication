@@ -1,4 +1,5 @@
-﻿using CryptoDesktopApplication.GeneratorsFront;
+﻿using CryptoDesktopApplication.Fips;
+using CryptoDesktopApplication.GeneratorsFront;
 using CryptoDesktopApplication.GeneratorsFront.Cascade;
 using CryptoDesktopApplication.GeneratorsFront.Geffe;
 using CryptoDesktopApplication.GeneratorsFront.LfsrGen;
@@ -7,6 +8,7 @@ using CryptoDesktopApplication.GeneratorsFront.SelfShrinking;
 using CryptoDesktopApplication.GeneratorsFront.Shrinking;
 using CryptoDesktopApplication.GeneratorsFront.StopAndGo;
 using CryptoDesktopApplication.GeneratorsFront.Threshold;
+using CryptoDesktopApplication.StreamCipher;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -124,6 +126,30 @@ namespace CryptoDesktopApplication
         {
             MainContainer.Children.Clear();
             MainContainer.Children.Add(new StopAndGoDescription());
+        }
+
+        private void lfsrDesTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new LfsrGeneratorDescription());
+        }
+
+        private void fipsCalcTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new FipsTestsUserControl());
+        }
+
+        private void fipsDescTab_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new FipsDescription());
+        }
+
+        private void streamCipher_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new StreamCipherUserControl());
         }
     }
 }

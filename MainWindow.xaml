@@ -20,7 +20,7 @@
                             <MenuItem Header="_Autorzy"/>
                         </MenuItem>
                         <MenuItem x:Name="Generators_description" Header="_Generatory - opis">
-                            <MenuItem x:Name="lfsrDesTab" Header="_Rejestr LFSR"/>
+                            <MenuItem x:Name="lfsrDesTab" Header="_Rejestr LFSR" Click="lfsrDesTab_Click"/>
                             <MenuItem x:Name="geffeDesTab" Header="_Generator Geffego" Click="geffeDesTab_Click"/>
                             <MenuItem x:Name="cascadeDesTab" Header="_Kaskada Gollmana" Click="cascadeDesTab_Click"/>
                             <MenuItem x:Name="thresholdDesTab" Header="_Generator progowy" Click="thresholdDesTab_Click"/>
@@ -40,13 +40,12 @@
                             <MenuItem x:Name="stopandgoTab" Header="_Generator stop &amp; go" Click="stopandgoTab_Click"/>
                         </MenuItem>
                         <MenuItem x:Name="Stream_ciphers" Header="_Szyfry strumieniowe">
-                            <MenuItem Header="_Opis"/>
-                            <MenuItem Header="_Działanie"/>
-                            <MenuItem Header="_Szyfrator A5/1"/>
+                            <MenuItem x:Name="streamCipher" Header="_Opis i działanie" Click="streamCipher_Click"/>
+                            <MenuItem Header="_Szyfr A5/1"/>
                         </MenuItem>
                         <MenuItem x:Name="Fips_tests" Header="_Testy FIPS">
-                            <MenuItem Header="_Opis"/>
-                            <MenuItem Header="_Kalkulator"/>
+                            <MenuItem x:Name="fipsDescTab" Header="_Opis" Click="fipsDescTab_Click" />
+                            <MenuItem x:Name="fipsCalcTab" Header="_Kalkulator" Click="fipsCalcTab_Click"/>
                         </MenuItem>
                     </Menu>
                     <WrapPanel x:Name="MainContainer" Grid.Row="1" ></WrapPanel>
