@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\obj\Debug\
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\
 CryptoDesktopApplication
 none
 false
 DEBUG;TRACE
-C:\Users\Kamil-PC\source\repos\CryptoDesktopApplication\CryptoDesktopApplication\App.xaml
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\App.xaml
 23-910274168
 
-45-673436417
-15884686890
+45932871614
+15-590494511
 Fips\FipsDescription.xaml;Fips\FipsTestsUserControl.xaml;GeneratorsFront\Cascade\CascadeSettings.xaml;GeneratorsFront\Cascade\CascadeDescription.xaml;GeneratorsFront\Geffe\GeffeSettings.xaml;GeneratorsFront\Geffe\GeffeDescription.xaml;GeneratorsFront\Lfsr\LfsrGeneratorDescription.xaml;GeneratorsFront\Lfsr\LfsrGeneratorSettings.xaml;GeneratorsFront\RegisterUserControl.xaml;GeneratorsFront\SelfDecimation\SelfDecimationSettings.xaml;GeneratorsFront\SelfDecimation\SelfDecimationDescription.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingSettings.xaml;GeneratorsFront\SelfShrinking\SelfShrinkingDescription.xaml;GeneratorsFront\Shrinking\ShrinkingSettings.xaml;GeneratorsFront\Shrinking\ShrinkingDescription.xaml;GeneratorsFront\StopAndGo\StopAndGoSettings.xaml;GeneratorsFront\StopAndGo\StopAndGoDescription.xaml;GeneratorsFront\Threshold\ThresholdSettings.xaml;GeneratorsFront\Threshold\ThresholdDescription.xaml;LoadingControl\Block.xaml;LoadingControl\LoadingAnimation.xaml;MainWindow.xaml;StreamCipher\StreamCipherUserControl.xaml;
 
-True
+False
 
