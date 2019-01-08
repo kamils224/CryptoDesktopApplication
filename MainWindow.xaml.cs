@@ -151,5 +151,11 @@ namespace CryptoDesktopApplication
             MainContainer.Children.Clear();
             MainContainer.Children.Add(new StreamCipherUserControl());
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new A5_1Settings());
+        }
     }
 }

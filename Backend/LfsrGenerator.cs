@@ -32,6 +32,8 @@ namespace CryptoDesktopApplication.Backend
             {
                 Registers[registerIndex] = register;
             }
+
+            Registers[registerIndex].UpdateOutputBit();
         }
 
         protected virtual bool GenerateOneBit()

@@ -155,6 +155,11 @@ namespace CryptoDesktopApplication.Backend
             return new string(result);
         }
 
+        public void UpdateOutputBit()
+        {
+            this.OutputBit = Register[Register.Length - 1];
+        }
+
         public Lfsr()
         {
             Register = new BitArray(8);

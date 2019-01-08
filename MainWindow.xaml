@@ -41,7 +41,8 @@
                         </MenuItem>
                         <MenuItem x:Name="Stream_ciphers" Header="_Szyfry strumieniowe">
                             <MenuItem x:Name="streamCipher" Header="_Opis i działanie" Click="streamCipher_Click"/>
-                            <MenuItem Header="_Szyfr A5/1"/>
+                            <MenuItem Header="Szyfr A5/1 - opis"/>
+                            <MenuItem Header="Szyfr A5/1 - działanie" Click="MenuItem_Click"/>
                         </MenuItem>
                         <MenuItem x:Name="Fips_tests" Header="_Testy FIPS">
                             <MenuItem x:Name="fipsDescTab" Header="_Opis" Click="fipsDescTab_Click" />
