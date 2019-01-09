@@ -531,9 +531,20 @@ namespace CryptoDesktopApplication.StreamCipher
             return output;
         }
 
+        private byte[] loadedFile;
+        private uint fileLengthinBits;
+
         private void loadFileEncrypt_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog fileDialog = new OpenFileDialog();
 
+            if (fileDialog.ShowDialog() == true)
+            {
+                loadedFile = File.ReadAllBytes(fileDialog.FileName);
+                fileLengthinBits = (uint)loadedFile.Length * 8;
+                filenameInfo.Text = "Nazwa pliku: " + fileDialog.SafeFileName;
+                fileLengthInfo.Text = "Liczba bitów: " + fileLengthinBits;
+            }
         }
 
         private string asciiOutput = null;
@@ -656,6 +667,50 @@ namespace CryptoDesktopApplication.StreamCipher
             {
                 register23[i].Text = "0";
             }
+        }
+
+        private void encryptFileBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (loadedFile == null)
+            {
+                MessageBox.Show("Nie wczytano pliku!");
+                return;
+            }
+
+            bool updateRegisters = ChangeRegistersCheckbox.IsChecked==true;
+
+            SaveFileDialog fileDialog = new SaveFileDialog();
+
+            string filename = null;
+            if (fileDialog.ShowDialog() == true)
+            {
+                filename = fileDialog.FileName;
+            }
+
+            ShowLoadingCircle();
+            DisableAllButtons();
+
+            Task.Run(() =>
+            {
+                if (filename != null)
+                {
+
+
+                    File.WriteAllBytes(filename, Encrypt(loadedFile, true));
+
+                    HideLoadingCircle();
+                    EnableAllButtons();
+                }
+
+                if (updateRegisters)
+                {
+                    UpdateRegisters();
+                }
+
+            });
+
+
+
         }
     }
 }

@@ -142,7 +142,7 @@
             </RadioButton>
         </Grid>
         <Button x:Name="loadFileEncrypt" Content="Wczytaj plik" HorizontalAlignment="Left" Margin="642,536,0,0" VerticalAlignment="Top" Width="117" Height="36" Click="loadFileEncrypt_Click" />
-        <Button ToolTip="Szyfruje plik korzystając z aktualnie ustawionych rejestrów" x:Name="encryptFileBtn" Content="Szyfruj plik" HorizontalAlignment="Left" Margin="764,536,0,0" VerticalAlignment="Top" Width="109" Height="36" />
+        <Button ToolTip="Szyfruje plik korzystając z aktualnie ustawionych rejestrów" x:Name="encryptFileBtn" Content="Szyfruj plik" HorizontalAlignment="Left" Margin="764,536,0,0" VerticalAlignment="Top" Width="109" Height="36" Click="encryptFileBtn_Click_1" />
         <TextBlock x:Name="filenameInfo"  Foreground="#FF224BB6" FontSize="12" Text="" Margin="466,601,407,27"/>
         <TextBlock x:Name="fileLengthInfo"  Foreground="#FF224BB6" FontSize="12" Text="" Margin="466,618,407,10"/>
         <Label x:Name="seriesLengthLabel" Width="auto" VerticalAlignment="Top" Margin="28,588,0,0" HorizontalAlignment="Left" FontSize="20" Foreground="#FF224BB6" Content="Długość ciągu (w bitach)"/>

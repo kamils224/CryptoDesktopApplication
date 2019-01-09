@@ -457,9 +457,6 @@ namespace CryptoDesktopApplication.StreamCipher
                 enableAllbuttons();
             }
             
-            
-
-
         }
     }
 }
