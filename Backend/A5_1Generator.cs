@@ -16,17 +16,15 @@ namespace CryptoDesktopApplication.Backend
         {
             Registers = new Lfsr[3];
 
-            Registers[0]=new Lfsr(19);
-            Registers[0].FeedbackFunction = new[] {13, 16, 17, 18};
-            Registers[1]=new Lfsr(22);
-            Registers[1].FeedbackFunction = new[] { 20,21 };
-            Registers[2]=new Lfsr(23);
-            Registers[2].FeedbackFunction = new[] { 7,20,21,22 };
+            Registers[0]=new Lfsr(19,true);
+            Registers[1]=new Lfsr(22, true);
+            Registers[2]=new Lfsr(23, true);
 
         }
 
         protected override void NextStep()
         {
+
             bool[] outputs = new bool[3];
             byte ones = 0;
             bool clockOne = false;
@@ -64,5 +62,6 @@ namespace CryptoDesktopApplication.Backend
 
             return bit1 ^ bit2 ^ bit3;
         }
+
     }
 }

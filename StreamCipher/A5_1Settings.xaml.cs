@@ -26,6 +26,8 @@ namespace CryptoDesktopApplication.StreamCipher
         private List<TextBox> register19 = new List<TextBox>();
         private List<TextBox> register22 = new List<TextBox>();
         private List<TextBox> register23 = new List<TextBox>();
+
+        private readonly string hexPattern = @"^[A-Fa-f0-9]*$";
         public A5_1Settings()
         {
             InitializeComponent();
@@ -140,7 +142,7 @@ namespace CryptoDesktopApplication.StreamCipher
                 }
             }
 
-            Lfsr[] lfsrs = new Lfsr[3] {new Lfsr(19), new Lfsr(22), new Lfsr(23)};
+            Lfsr[] lfsrs = new Lfsr[3] {new Lfsr(19,true), new Lfsr(22, true), new Lfsr(23, true) };
             for (int i = 0; i < register19.Count; i++)
             {
                 string txt = register19[i].Text;
@@ -176,7 +178,7 @@ namespace CryptoDesktopApplication.StreamCipher
 
                 lfsrs[2].Register[i] = (toAdd == '1');
             }
-
+            
             generator.ChangeRegister(lfsrs[0],0);
             generator.ChangeRegister(lfsrs[1],1);
             generator.ChangeRegister(lfsrs[2],2);
@@ -321,7 +323,212 @@ namespace CryptoDesktopApplication.StreamCipher
 
         private void encryptBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(inputEncrypt.Text))
+            {
+                return;
+            }
 
+
+            string input = inputEncrypt.Text;
+
+            var checkedRB = inputFormat.Children.OfType<RadioButton>().FirstOrDefault(r => r.IsChecked == true);
+            string format = checkedRB.DataContext as string;
+            byte[] encodedText = null;
+
+            bool changeRegisters = false;
+            if (ChangeRegistersCheckbox.IsChecked == true)
+            {
+                changeRegisters = true;
+            }
+
+            Lfsr[] lfsrs = new Lfsr[3] { new Lfsr(19, true), new Lfsr(22, true), new Lfsr(23, true) };
+            for (int i = 0; i < register19.Count; i++)
+            {
+                string txt = register19[i].Text;
+                char toAdd = '0';
+                if (txt.Length == 1)
+                {
+                    toAdd = txt[0];
+                }
+
+                lfsrs[0].Register[i] = (toAdd == '1');
+            }
+
+            for (int i = 0; i < register22.Count; i++)
+            {
+                string txt = register22[i].Text;
+                char toAdd = '0';
+                if (txt.Length == 1)
+                {
+                    toAdd = txt[0];
+                }
+
+                lfsrs[1].Register[i] = (toAdd == '1');
+            }
+
+            for (int i = 0; i < register23.Count; i++)
+            {
+                string txt = register23[i].Text;
+                char toAdd = '0';
+                if (txt.Length == 1)
+                {
+                    toAdd = txt[0];
+                }
+
+                lfsrs[2].Register[i] = (toAdd == '1');
+            }
+
+            generator.ChangeRegister(lfsrs[0], 0);
+            generator.ChangeRegister(lfsrs[1], 1);
+            generator.ChangeRegister(lfsrs[2], 2);
+
+
+            Task.Run(() => {
+
+                DisableAllButtons();
+                ShowLoadingCircle();
+                switch (format)
+                {
+                    case "ascii":
+                        {
+                            encodedText = Encoding.ASCII.GetBytes(input);
+                            output = Encrypt(encodedText, changeRegisters);
+                            break;
+                        }
+                    case "hex":
+                        {
+                            Regex regex = new Regex(hexPattern);
+                            if (!regex.IsMatch(input))
+                            {
+                                Dispatcher.Invoke(() =>
+                                {
+                                    HideLoadingCircle();
+                                    EnableAllButtons();
+                                    MessageBox.Show("Podano niepoprawny tekst dla formatu hex!");
+                                });
+
+                                return;
+                            }
+                            try
+                            {
+                                encodedText = Helpers.StringToByteArrayFastest(input);
+                            }
+                            catch (Exception ex)
+                            {
+                                Dispatcher.Invoke(() =>
+                                {
+                                    HideLoadingCircle();
+                                    EnableAllButtons();
+                                    MessageBox.Show(ex.Message);
+                                });
+                                return;
+                            }
+
+                            output = Encrypt(encodedText, changeRegisters);
+
+                            break;
+                        }
+                    case "base64":
+                        {
+                            try
+                            {
+                                encodedText = Convert.FromBase64String(input);
+                            }
+                            catch (FormatException)
+                            {
+                                Dispatcher.Invoke(() =>
+                                {
+                                    HideLoadingCircle();
+                                    EnableAllButtons();
+                                    MessageBox.Show("niepoprawny format Base64!");
+                                });
+                                return;
+                            }
+                            output = Encrypt(encodedText,changeRegisters);
+                            break;
+                        }
+                    case "unicode":
+                        {
+                            encodedText = Encoding.Unicode.GetBytes(input);
+                            output = Encrypt(encodedText, changeRegisters);
+                            break;
+                        }
+                    default:
+                        break;
+                }
+
+                HideLoadingCircle();
+                EnableAllButtons();
+
+                asciiOutput = null;
+                hexOutput = null;
+                base64Output = null;
+                unicodeOutput = null;
+                WriteToOutputTextbox(output);
+
+            });
+        }
+
+        private void WriteToOutputTextbox(byte[] encrypted)
+        {
+            Dispatcher.Invoke(() =>
+            {
+                var checkedRB = outputFormat.Children.OfType<RadioButton>().FirstOrDefault(r => r.IsChecked == true);
+                var format = checkedRB.DataContext as string;
+
+                switch (format)
+                {
+                    case "ascii":
+                    {
+                        asciiOutput = Encoding.ASCII.GetString(encrypted);
+                        outputEncrypt.Text = asciiOutput;
+                        break;
+                    }
+                    case "hex":
+                    {
+                        var hex = BitConverter.ToString(encrypted).Replace("-", string.Empty);
+                        hexOutput = hex;
+                        outputEncrypt.Text = hexOutput;
+
+                        break;
+                    }
+                    case "base64":
+                    {
+                        base64Output = Convert.ToBase64String(encrypted);
+                        outputEncrypt.Text = base64Output;
+                        break;
+                    }
+                    case "unicode":
+                    {
+                        unicodeOutput = Encoding.Unicode.GetString(encrypted);
+                        outputEncrypt.Text = unicodeOutput;
+                        break;
+                    }
+                    default:
+                        break;
+                }
+
+            });
+        }
+
+        private byte[] Encrypt(byte[] message,bool updateRegisters)
+        {
+            var key = generator.GenerateBytes(message.Length);
+            byte[] output = new byte[message.Length];
+
+            for (int i = 0; i < message.Length; i++)
+            {
+                int xor = message[i] ^ key[i];
+                output[i] = (byte) xor;
+            }
+
+            if (updateRegisters)
+            {
+                UpdateRegisters();
+            }
+
+
+            return output;
         }
 
         private void loadFileEncrypt_Click(object sender, RoutedEventArgs e)

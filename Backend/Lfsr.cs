@@ -176,6 +176,49 @@ namespace CryptoDesktopApplication.Backend
             OutputBit = Register[Register.Length - 1];
         }
 
+        public Lfsr(int length,bool A5Registers)
+        {
+            Register = new BitArray(length);
+            this.length = length;
+            Random rng = new Random();
+
+            for (int i = 0; i < length; i++)
+            {
+                Register[i] = rng.Next(0, 2) > 0;
+
+            }
+
+            if (A5Registers)
+            {
+                switch (Register.Length)
+                {
+                    case 19:
+                    {
+                        FeedbackFunction = new[] { 13, 16, 17, 18 };
+                        break;
+                    }
+                    case 22:
+                    {
+                        FeedbackFunction = new[] { 20, 21 };
+                        break;
+                    }
+                    case 23:
+                    {
+                        FeedbackFunction = new[] { 7, 20, 21, 22 };
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                FeedbackFunctionInit();
+            }
+
+            
+
+            OutputBit = Register[Register.Length - 1];
+        }
+
         public Lfsr(int length)
         {
             Register = new BitArray(length);
