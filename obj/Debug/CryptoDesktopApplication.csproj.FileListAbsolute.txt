@@ -132,3 +132,7 @@ C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1
 C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Settings.baml
 C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Description.g.cs
 C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Description.baml
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\MainPages\Instructions.g.cs
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\MainPages\MainPage.g.cs
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\MainPages\Instructions.baml
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\MainPages\MainPage.baml

@@ -160,7 +160,7 @@
                 </Style>
             </Label.Style>
         </Label>
-        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,385,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="setPolynomial_Click" />
+        <Button FontSize="20" x:Name="setPolynomial" Content="Zresetuj tabelę" ToolTip="Przywraca wielomiany do początkowego stanu" HorizontalAlignment="Left" Margin="1082,381,0,0" VerticalAlignment="Top" Width="178" Height="35" Click="setPolynomial_Click" />
         <Label ToolTip="Aktulna liczba bitów w rejestrze" x:Name="r1CurrentCounter" FontSize="20" Content="8" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" Width="38" Height="33">
             <Label.Style>
                 <Style TargetType="Label">

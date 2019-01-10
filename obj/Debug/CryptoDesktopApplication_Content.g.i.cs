@@ -8,7 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/streamcipher1.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/streamcipher2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/logomainpage.png")]
 
 

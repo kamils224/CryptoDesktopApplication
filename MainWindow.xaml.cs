@@ -23,6 +23,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CryptoDesktopApplication.MainPages;
 
 namespace CryptoDesktopApplication
 {
@@ -34,7 +35,7 @@ namespace CryptoDesktopApplication
         public MainWindow()
         {
             InitializeComponent();
-            MainContainer.Children.Add(new LfsrGeneratorSettings());
+            MainContainer.Children.Add(new MainPage());
         }
 
         private void lfsrTab_Click(object sender, RoutedEventArgs e)
@@ -162,6 +163,18 @@ namespace CryptoDesktopApplication
         {
             MainContainer.Children.Clear();
             MainContainer.Children.Add(new A5_1Description());
+        }
+
+        private void main_page_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new MainPage());
+        }
+
+        private void instructions_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new Instructions());
         }
     }
 }

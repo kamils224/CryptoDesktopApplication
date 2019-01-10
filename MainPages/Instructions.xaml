@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="CryptoDesktopApplication.MainPages.Instructions"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptoDesktopApplication.MainPages"
+             mc:Ignorable="d" 
+             Height="645" Width="1280">
+    <Grid Background="White">
+        <Label FontWeight="Bold" FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,578" Content="Instrukcja użytkowania" />
+        <Label FontWeight="Bold" FontSize="24" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="10,92,917,510" Content="Zakładka &quot;Generatory - opis&quot;" />
+        <TextBlock  FontSize="20" Foreground="#FF224BB6" Margin="69,135,181,474" Text="Zawiera teoretyczne informacje o zaimplementowanych generatorach wykorzystujących rejestr LFSR." />
+        <Label FontWeight="Bold" FontSize="24" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="10,170,869,432" Content="Zakładka &quot;Generatory - działanie&quot;" />
+        <TextBlock TextWrapping="Wrap" FontSize="20" Foreground="#FF224BB6" Margin="69,354,42,198" Text="Zawiera opis oraz przestawienie działania szyfru strumieniowego. Umożliwia wczytanie ciągu pseudolosowego jako klucza i użycie go do zaszyfrowania tektu z konsoli lub z pliku. Dodatkowo posiada opis oraz implementację szyfru A5/1 wraz z możliwością konfiguracji rejestrów LFSR." />
+        <Label FontWeight="Bold" FontSize="24" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="10,306,869,296" Content="Zakładka &quot;Szyfry strumieniowe&quot;" />
+        <TextBlock TextWrapping="Wrap" FontSize="20" Foreground="#FF224BB6" Margin="69,213,42,339" ><Run Text="Zawiera implementację generatorów z możliwością konfiguracji rejestrów i wielomianów. Ciąg wyjściowy jest zapisywany w konsoli w formacie znaków lub Base64, któ"/><Run Text="ry umożliwia łatwe przenoszenie danych binarnych. "/><Run Text="Możliwe jest także zapisanie stworzonego ciągu do pliku tekstowego lub binarnego. "/><Run Text="Dla ciągów o długości powyżej 20 000"/><Run Text=" automatycznie są przeprowadzane testy FIPS"/><Run Text=" "/><Run Text="140-2"/><Run Text="."/></TextBlock>
+        <Label FontWeight="Bold" FontSize="24" Foreground="#FF224BB6" HorizontalContentAlignment="Left" Margin="10,452,869,150" Content="Zakładka &quot;Testy FIPS&quot;" />
+        <TextBlock TextWrapping="Wrap" FontSize="20" Foreground="#FF224BB6" Margin="69,500,42,74" Text="Zawiera opis oraz implementację testów FIPS 140-2. Umożliwia przetestowanie wygenerowanych ciągów pseudolosowych lub dowolnego zewnętrzengo pliku. Po przeprowadzonym teście wyświetla szczegółowe wyniki." />
+
+    </Grid>
+</UserControl>

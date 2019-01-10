@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="CryptoDesktopApplication.MainPages.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CryptoDesktopApplication.MainPages"
+             mc:Ignorable="d" 
+             Height="645" Width="1280">
+    <Grid Background="White">
+        <Image HorizontalAlignment="Left" Height="389" Margin="304,32,0,0" VerticalAlignment="Top" Width="745" Source="/CryptoDesktopApplication;component/Images/logoMainPage.png"/>
+        <Image HorizontalAlignment="Left" Height="251" Margin="991,377,0,0" VerticalAlignment="Top" Width="278" Source="/CryptoDesktopApplication;component/Images/logo1.jpg"/>
+        <TextBlock Foreground="#FF224BB6" FontSize="24" HorizontalAlignment="Left" Margin="10,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="893" Height="202" ><Run Text="  "/><Run Text="Desktopowa część pracy inżynierskiej "/><Run FontWeight="Bold" Text="&quot;Internetowy serwis edukacyjny z dziedziny kryptologii&quot; "/><Run Text="autorstwa studentów Politechniki Poznańskiej:"/><LineBreak/><Run/><LineBreak/><Run Text="Paulina Mro"/><Run Text="z"/><Run Text="ek"/><LineBreak/><Run Text="Kamil Sagalara"/><LineBreak/><Run Text="Hubert Springer"/></TextBlock>
+
+    </Grid>
+</UserControl>

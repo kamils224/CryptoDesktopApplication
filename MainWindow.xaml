@@ -15,9 +15,8 @@
                 <DockPanel Margin="0,0,0,-644">
                     <Menu Foreground="White" Background="#282828" IsMainMenu="True" Grid.Row="0" DockPanel.Dock="Top">
                         <MenuItem x:Name="Main_page" Header="_Strona główna">
-                            <MenuItem Header="_Wstęp"/>
-                            <MenuItem Header="_Instrukcja użytkowania"/>
-                            <MenuItem Header="_Autorzy"/>
+                            <MenuItem x:Name="main_page" Header="_Strona główna" Click="main_page_Click"/>
+                            <MenuItem x:Name="instructions" Header="_Instrukcja użytkowania" Click="instructions_Click"/>
                         </MenuItem>
                         <MenuItem x:Name="Generators_description" Header="_Generatory - opis">
                             <MenuItem x:Name="lfsrDesTab" Header="_Rejestr LFSR" Click="lfsrDesTab_Click"/>

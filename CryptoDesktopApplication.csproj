@@ -64,6 +64,12 @@
     </ApplicationDefinition>
     <Compile Include="Backend\A5_1Generator.cs" />
     <Compile Include="Helpers.cs" />
+    <Compile Include="MainPages\Instructions.xaml.cs">
+      <DependentUpon>Instructions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPages\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StreamCipher\A5_1Settings.xaml.cs">
       <DependentUpon>A5_1Settings.xaml</DependentUpon>
     </Compile>
@@ -156,6 +162,14 @@
     <Page Include="LoadingControl\LoadingAnimation.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPages\Instructions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -323,6 +337,9 @@
   <ItemGroup>
     <Resource Include="Images\streamcipher1.png" />
     <Resource Include="Images\streamcipher2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logoMainPage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
