@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
               Height="645" Width="1280" Background="White">
     <Grid x:Name="Settings">
-        <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Kaskada Gollmanna - działanie" Margin="0,10,0,572"  />
+        <Label FontWeight="Bold" FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center"  Content="Kaskada Gollmanna - działanie" Margin="0,10,0,572"  />
         <Label FontSize="20" Content="Podaj liczbę rejestrów i ustaw ich wartości początkowe" Foreground="#FF224BB6" HorizontalAlignment="Left" Margin="30,68,0,0" VerticalAlignment="Top" Width="auto"/>
         <ScrollViewer  CanContentScroll="True" VerticalScrollBarVisibility="Visible" Margin="10,115,332,318">
             <StackPanel x:Name="Lfsr_list" ScrollViewer.VerticalScrollBarVisibility="Visible"  MaxHeight="150">

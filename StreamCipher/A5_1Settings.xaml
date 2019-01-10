@@ -84,7 +84,7 @@
         </StackPanel>
         <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="19" x:Name="R1_txtBox" FontSize="20" Margin="509,77,508,536"/>
         <TextBlock Text="Rejestr 1" FontSize="20" Foreground="#FF224BB6" Margin="28,77,1152,536"/>
-        <TextBlock FontSize="35" Foreground="#FF224BB6" FontWeight="Bold" Text="Szyfr A5/1" Margin="509,0,587,582"/>
+        <TextBlock TextAlignment="Center" FontSize="35" Foreground="#FF224BB6" FontWeight="Bold" Text="Szyfr A5/1" Margin="0,9,0,573"/>
         <Button x:Name="fillR1Btn" Content="Wypełnij rejestr" HorizontalAlignment="Left" Margin="777,77,0,0" VerticalAlignment="Top" Width="147" Height="32" Click="fillR1Btn_Click" />
         <TextBlock FontSize="20" Foreground="#FF224BB6" Margin="128,77,776,536"><Run Text="Wielomian:"/><Run Text=" "/><Run Text="x"/><Run Text=" "/><Run Typography.Variants="Superscript" Text="19"/><Run Text=" "/><Run Text="+"/><Run Text=" "/><Run Text="x"/><Run Text=" "/><Run Typography.Variants="Superscript" Text="18"/><Run Text=" "/><Run Text="+"/><Run Text=" "/><Run Text="x"/><Run Text=" "/><Run Typography.Variants="Superscript" Text="17"/><Run Text=" "/><Run Text="+"/><Run Text=" "/><Run Text="x"/><Run Text=" "/><Run Typography.Variants="Superscript" Text="14"/><Run Text=" "/><Run Text="+ 1"/></TextBlock>
         <TextBox DataObject.Pasting="BinaryStringPasting" PreviewTextInput="BinaryStringValidationTextBox" MaxLength="22" x:Name="R2_txtBox" FontSize="20" Margin="509,167,508,446"/>

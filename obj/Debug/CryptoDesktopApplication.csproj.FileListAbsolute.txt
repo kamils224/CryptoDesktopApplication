@@ -130,3 +130,5 @@ C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\CryptoDesktopAppl
 C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\CryptoDesktopApplication.csproj.CopyComplete
 C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Settings.g.cs
 C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Settings.baml
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Description.g.cs
+C:\Users\Kamil\source\repos\CryptoDesktopApplication\obj\Debug\StreamCipher\A5_1Description.baml

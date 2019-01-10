@@ -152,10 +152,16 @@ namespace CryptoDesktopApplication
             MainContainer.Children.Add(new StreamCipherUserControl());
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void A5Cipher_Click(object sender, RoutedEventArgs e)
         {
             MainContainer.Children.Clear();
             MainContainer.Children.Add(new A5_1Settings());
+        }
+
+        private void A5Description_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Children.Clear();
+            MainContainer.Children.Add(new A5_1Description());
         }
     }
 }

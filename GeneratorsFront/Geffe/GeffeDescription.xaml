@@ -13,7 +13,7 @@
 
     <Grid x:Name="GridGeffego" Width="1280">
         <StackPanel HorizontalAlignment="Center" x:Name="StackGrid" Margin="0,10,0,0" Width="1280">
-            <Label FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
+            <Label FontWeight="Bold" FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
                 GENERATOR GEFFEGO
             </Label>
             <Label Margin="60,10,60,0" FontSize="20" Foreground="#FF224BB6">

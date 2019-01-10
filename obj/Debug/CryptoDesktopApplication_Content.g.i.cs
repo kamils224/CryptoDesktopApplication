@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/pokerformula.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/streamcipher1.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/streamcipher2.png")]
 
 

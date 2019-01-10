@@ -57,5 +57,11 @@
         </Grid>
         <TextBlock Text="" x:Name="keyFilenameInfo" Foreground="#FF224BB6" FontSize="12" Margin="766,131,10,495"/>
         <TextBlock x:Name="fileLengthInfo"  Foreground="#FF224BB6" FontSize="12" Text="" Margin="766,569,245,59"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="171,221,0,0" VerticalAlignment="Top" Width="223" Source="/CryptoDesktopApplication;component/Images/streamcipher1.png"/>
+        <Image HorizontalAlignment="Left" Height="38" Margin="171,366,0,0" VerticalAlignment="Top" Width="386" Source="/CryptoDesktopApplication;component/Images/streamcipher2.png"/>
+        <TextBlock TextWrapping="Wrap" Foreground="#FF224BB6" FontSize="20" Margin="33,68,537,476"><Run Text="Szyfry strumieniowe tworza pseudolowy strumien bitów nazywanych strumieniem klucza. Aby zaszyfrowac wiadomosc strumien klucza i tekst jawny podlegaja operacji XOR."/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock TextWrapping="Wrap" Foreground="#FF224BB6" FontSize="20" Margin="33,181,537,429" Text="Szyfrowanie wiadomości można opisać wzorem:"/>
+        <TextBlock TextWrapping="Wrap" Foreground="#FF224BB6" FontSize="20" Margin="33,264,537,346" Text="S oznacza bity klucza, a M bity tekstu jawnego"/>
+        <TextBlock TextWrapping="Wrap" Foreground="#FF224BB6" FontSize="20" Margin="33,305,537,285"><Run Text="Funkcje szyfrowania i odszyfrowywania są takie same, odszyfrowywanie opisuje się"/><Run Text=" "/><Run Text="wzorem:"/></TextBlock>
     </Grid>
 </UserControl>

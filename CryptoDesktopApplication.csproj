@@ -67,6 +67,9 @@
     <Compile Include="StreamCipher\A5_1Settings.xaml.cs">
       <DependentUpon>A5_1Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StreamCipher\A5_1Description.xaml.cs">
+      <DependentUpon>A5_1Description.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StreamCipher\StreamCipherUserControl.xaml.cs">
       <DependentUpon>StreamCipherUserControl.xaml</DependentUpon>
     </Compile>
@@ -246,6 +249,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="StreamCipher\A5_1Description.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="StreamCipher\StreamCipherUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -309,6 +316,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\pokerFormula.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\A5_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\streamcipher1.png" />
+    <Resource Include="Images\streamcipher2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
