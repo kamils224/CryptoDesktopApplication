@@ -14,13 +14,9 @@
 
     <Grid x:Name="GridGollmana">
         <StackPanel HorizontalAlignment="Center" x:Name="StackGrid">
-            <Label FontWeight="Bold" FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" >
-                KASKADA GOLLMANA
-            </Label>
+            <Label FontWeight="Bold" FontSize="35" Foreground="#FF224BB6" HorizontalContentAlignment="Center" Margin="0,10,0,0" Content="KASKADA GOLLMANNA" />
             <Label Margin="55,8,55,0" FontSize="20" Foreground="#FF224BB6">
-                <TextBlock TextWrapping="WrapWithOverflow" Text="   Generator ten został zaproponowany przez D. Gollmana. Składa się on z
-ciagu rejestrów LFSR, gdzie wyjście zegarowe każdego następnego rejestru w ciągu
-jest sterowane przez poprzedni LFSR."/>
+                <TextBlock TextWrapping="WrapWithOverflow"><Run Text="   Generator ten został zaproponowany przez D. Gollman"/><Run Text="n"/><Run Text="a. Składa się on z ciagu rejestrów LFSR, gdzie wyjście zegarowe każdego następnego rejestru w ciągu jest sterowane przez poprzedni LFSR."/></TextBlock>
             </Label>
             <Image  HorizontalAlignment="Center" VerticalAlignment="Top" Source="/Images/gen_gollmana.PNG" Height="258" Width="796" />
             <Label Margin="55,0" FontSize="20" Foreground="#FF224BB6">

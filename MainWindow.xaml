@@ -21,7 +21,7 @@
                         <MenuItem x:Name="Generators_description" Header="_Generatory - opis">
                             <MenuItem x:Name="lfsrDesTab" Header="_Rejestr LFSR" Click="lfsrDesTab_Click"/>
                             <MenuItem x:Name="geffeDesTab" Header="_Generator Geffego" Click="geffeDesTab_Click"/>
-                            <MenuItem x:Name="cascadeDesTab" Header="_Kaskada Gollmana" Click="cascadeDesTab_Click"/>
+                            <MenuItem x:Name="cascadeDesTab" Header="_Kaskada Gollmanna" Click="cascadeDesTab_Click"/>
                             <MenuItem x:Name="thresholdDesTab" Header="_Generator progowy" Click="thresholdDesTab_Click"/>
                             <MenuItem x:Name="shrinkingDesTab" Header="_Generator obcinający" Click="shrinkingDesTab_Click"/>
                             <MenuItem x:Name="selfdecimationDesTab" Header="_Generator samodecymujący" Click="selfdecimationDesTab_Click"/>
@@ -31,7 +31,7 @@
                         <MenuItem x:Name="Generators_application" Header="_Generatory - działanie">
                             <MenuItem x:Name="lfsrTab" Header="_Rejestr LFSR" Click="lfsrTab_Click"/>
                             <MenuItem x:Name="geffeTab" Header="_Generator Geffego" Click="geffeTab_Click"/>
-                            <MenuItem x:Name="cascadeTab" Header="_Kaskada Gollmana" Click="cascadeTab_Click"/>
+                            <MenuItem x:Name="cascadeTab" Header="_Kaskada Gollmanna" Click="cascadeTab_Click"/>
                             <MenuItem x:Name="thresholdTab" Header="_Generator progowy" Click="thresholdTab_Click"/>
                             <MenuItem x:Name="shrinkingTab" Header="_Generator obcinający" Click="shrinkingTab_Click"/>
                             <MenuItem x:Name="selfdecimationTab" Header="_Generator samodecymujący" Click="selfdecimationTab_Click"/>
