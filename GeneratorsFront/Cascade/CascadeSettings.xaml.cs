@@ -672,6 +672,11 @@ namespace CryptoDesktopApplication.GeneratorsFront.Cascade
 
         private void createRegistersBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(numOfLfsrTxtBox.Text))
+            {
+                return;
+            }
+
             int numOfRegisters = int.Parse(numOfLfsrTxtBox.Text);
 
             Lfsr_list.Children.Clear();
